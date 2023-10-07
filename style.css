@@ -1,3 +1,22 @@
+/* Hide the scrollbar for all elements in Firefox and Edge */
+* {
+  scrollbar-width: none;
+}
+
+/* Optionally, you can style the scrollbar track and thumb in Firefox and Edge */
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; /* You can change this to a color or image */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent; /* You can change this to a color or image */
+}
+
 .desktop {
   background-color: #080808;
   display: flex;
