@@ -19,12 +19,12 @@ a {
 
 @font-face {
   font-family: "Stretch Pro-Regular";
-  src: url("./stretch-pro.regular.ttf")
+  src: url("./fonts/stretch-pro.regular.ttf")
     format("truetype");
 }
 
 @font-face {
   font-family: "Stretch Pro-Basic";
-  src: url("./stretch-pro.basic.ttf")
+  src: url("./fonts/stretch-pro.basic.ttf")
     format("truetype");
 }
