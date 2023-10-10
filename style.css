@@ -1,3 +1,4 @@
+
 /* Hide the scrollbar for all elements in Firefox and Edge */
 * {
   scrollbar-width: none;
@@ -18,16 +19,7 @@
 }
 
 .desktop {
-  background-color: #080808;
-  display: flex;
-  flex-direction: column;
-  height: 3706px;
-  align-items: flex-start;
-  gap: 54px;
-  padding: 94px 0px;
-  position: relative;
-  background-size: cover;
-  background-position: 50% 50%;
+  margin: 0; padding: 0; background: url('./images/static.png'); background-repeat: repeat;
 }
 
 .desktop .title {
@@ -36,6 +28,7 @@
   min-width: 1090px;
   align-items: flex-start;
   padding: 0px 95px;
+  padding-top: 100px;
   position: relative;
   align-self: stretch;
   width: 100%;
