@@ -294,6 +294,14 @@
   object-fit: cover;
 }
 
+.desktop .oliver-image {
+  position: relative;
+  align-self: stretch;
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+}
+
 .desktop .image-2 {
   display: flex;
   flex-direction: column;
@@ -365,6 +373,16 @@
   z-index: 0;
   position: relative;
   object-fit: cover;
+}
+
+.desktop .rectangle-6 {
+  width: 213.18px;
+  height: 300px;
+  position: relative;
+  object-fit: cover;
+  border-radius: 7px;
+  border: 2px solid;
+  border-color: #a8a8a867;
 }
 
 .desktop .span {
