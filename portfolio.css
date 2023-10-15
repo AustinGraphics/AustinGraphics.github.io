@@ -1,0 +1,200 @@
+* {
+    scrollbar-width: none;
+}
+  
+*::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+  
+*::-webkit-scrollbar-track {
+    background: transparent; /* You can change this to a color or image */
+}
+  
+*::-webkit-scrollbar-thumb {
+    background: transparent; /* You can change this to a color or image */
+}
+  
+.desktop {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background: url('./images/static.png');
+    background-repeat: repeat;
+    padding-bottom: 100px;
+}
+  
+.desktop .navbar {
+    display: flex;
+    height: 80px;
+    padding: 23px 94px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.00) 70%);
+    margin-bottom: 70px;
+}
+
+.desktop .navbar .goback {
+    flex: 1 0 0;
+    color: #FFF;
+    font-family: 'Stretch Pro';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 107.2%; /* 25.728px */
+    text-align: left;
+}
+
+.desktop .title {
+    color: #FFF;
+    font-family: Stretch Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 107.2%; /* 25.728px */
+    text-align: center;
+}
+
+.desktop .click {
+    color: #88c9ff;
+    font-family: Stretch Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 107.2%; /* 25.728px */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.desktop .images {
+    display: flex;
+    padding: 0px 89px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 34px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.desktop .images-item {
+    width: 433px;   
+    display: flex;
+    padding: 33px 33px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: stretch;
+    flex-wrap: wrap;
+    display: flex;
+    border-radius: 9px;
+    border: 1px solid rgba(169, 169, 169, 0.295);
+    background: rgba(255, 255, 255, 0.04);
+    flex-direction: column;
+}
+
+.desktop .image {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.desktop .image-item {
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    height: 225.56px;
+    object-fit: cover;
+    border-radius: 9px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: #a9a9a916;
+}
+
+.desktop .image-text {
+    width: 367px;
+    height: 52px;
+    top: 0;
+    left: 0;
+    font-family: "Stretch Pro-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 25.7px;
+}
+
+.desktop .banner {
+    width: 350px;
+    height: 123.9px;
+    position: relative;
+    object-fit: cover;
+}
+
+.desktop .logo {
+    width: 100px;
+    height: 100px;
+    margin-top: -41px;
+    position: relative;
+    object-fit: cover;
+}
+
+.desktop .image-3 {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+}
+
+.desktop .rectangle-4 {
+    position: relative;
+    width: 236.27px;
+    height: 236.27px;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.desktop .rectangle-5 {
+    width: 180px;
+    height: 180px;
+    margin-left: -59px;
+    z-index: 0;
+    position: relative;
+    object-fit: cover;
+}
+
+.desktop .category {
+    display: flex;
+    padding: 0px 89px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 34px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+}
+
+.desktop .category .title {
+    color: #FFF;
+    font-family: Stretch Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 107.2%; /* 25.728px */
+    text-align: center;
+}
