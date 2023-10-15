@@ -124,7 +124,7 @@
     height: 52px;
     top: 0;
     left: 0;
-    font-family: "Stretch Pro-Regular", Helvetica;
+    font-family: "Stretch Pro-Basic", Helvetica;
     font-weight: 400;
     color: #ffffff;
     font-size: 24px;
@@ -134,8 +134,7 @@
 }
 
 .desktop .banner {
-    width: 350px;
-    height: 123.9px;
+    width: 100%;
     position: relative;
     object-fit: cover;
 }
@@ -177,7 +176,7 @@
 
 .desktop .category {
     display: flex;
-    padding: 0px 89px;
+    padding: 0px 40px;
     justify-content: center;
     align-items: center;
     align-content: center;
