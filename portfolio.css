@@ -40,7 +40,7 @@
 .desktop .navbar .goback {
     flex: 1 0 0;
     color: #FFF;
-    font-family: 'Stretch Pro';
+    font-family: "Stretch Pro-Basic", Helvetica;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -50,7 +50,7 @@
 
 .desktop .title {
     color: #FFF;
-    font-family: Stretch Pro;
+    font-family: "Stretch Pro-Basic", Helvetica;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -60,7 +60,7 @@
 
 .desktop .click {
     color: #88c9ff;
-    font-family: Stretch Pro;
+    font-family: "Stretch Pro-Basic", Helvetica;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -190,7 +190,7 @@
 
 .desktop .category .title {
     color: #FFF;
-    font-family: Stretch Pro;
+    font-family: "Stretch Pro-Basic", Helvetica;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
