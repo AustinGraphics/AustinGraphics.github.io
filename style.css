@@ -63,6 +63,7 @@
   font-size: 90px;
   letter-spacing: 0;
   line-height: 96.5px;
+  text-align: center;
 }
 
 .desktop .text-wrapper-2 {
@@ -642,6 +643,15 @@
   position: relative;
   width: 74px;
   height: 74px;
+}
+
+.desktop .logo-top {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  margin-bottom: 30px;
+  box-shadow: #7a0a39c9 0 0 90px 0px;
 }
 
 .desktop .text-wrapper-10 {
