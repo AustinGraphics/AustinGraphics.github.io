@@ -173,6 +173,17 @@
     </div>
 </body>
 <script>
+    function updateHomeValue(user, day, period, homeValue) {
+        fetch(`https://austin-graphics-github-io.vercel.app/timetable/api/${user}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ day, period, homeValue })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
+
     var periodtoggle = 0;
     (document.querySelector('.periods')).addEventListener('click', function() {
         if (!periodtoggle) {
@@ -263,11 +274,11 @@
     }, 10);
 
     let timetableData = {};
-    var currentUserName = 'Olek';
+    var currentUserName = 'Austin';
     let currentUserTimetable = {};
     function loadCurrentUserTimetable() {
 
-        fetch(`${currentUserName}/timetable.json`)
+        fetch(`https://austin-graphics-github-io.vercel.app/timetable/data/${currentUserName}/timetable.json`)
         .then(response => response.json())
         .then(timetable => {
             currentUserTimetable = timetable;
@@ -308,7 +319,14 @@
 
                     const switchDiv = document.createElement("div");
                     switchDiv.classList.add("switch");
-                    if (periodData.home === 0 && periodData.name.toLowerCase() === "free") switchDiv.classList.add("on");
+                    if (periodData.home === 0 && periodData.name.toLowerCase() === "free") {
+                        switchDiv.classList.add("on");
+                    }
+                    if (periodData.name.toLowerCase() === "free") {
+                        switchDiv.addEventListener('click', () => {
+                            updateHomeValue('Oliver', 'monday', 'period 1', 1);
+                        })
+                    }
 
                     // Add the knob inside the switch
                     const knobDiv = document.createElement("div");
@@ -361,7 +379,7 @@
         // Fetch the timetable JSON data once
         async function loadTimetable(name) {
             try {
-                const response = await fetch(`${name}/timetable.json`);
+                const response = await fetch(`https://austin-graphics-github-io.vercel.app/timetable/data/${name}/timetable.json`);
                 const data = await response.json();
                 
                 timetableData = data;
