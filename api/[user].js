@@ -3,7 +3,7 @@ import path from 'path';
 
 export default async function handler(req, res) {
     const { user } = req.query;
-    const filePath = path.join(process.cwd(), 'data', user, 'timetable.json');
+    const filePath = path.join(process.cwd(), 'timetable', 'data', user, 'timetable.json');
 
     if (req.method === 'POST') {
         const { day, period, homeValue } = req.body;
