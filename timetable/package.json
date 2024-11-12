@@ -1,8 +1,12 @@
 {
-    "name": "timetable-app",
-    "version": "1.0.0",
-    "scripts": {
-      "build": "echo 'No build step required'",
-      "start": "vercel dev"
-    }
-  }
+  "name": "austingraphics.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

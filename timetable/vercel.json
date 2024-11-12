@@ -1,5 +1,12 @@
 {
+    "builds": [
+      {
+        "src": "timetable/package.json",
+        "use": "@vercel/node"
+      }
+    ],
     "rewrites": [
-      { "source": "/api/:match*", "destination": "/api/:match*" }
-    ]
+      { "source": "/api/:match*", "destination": "/timetable/api/:match*" }
+    ],
+    "public": "timetable/public"
   }
