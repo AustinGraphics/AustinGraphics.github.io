@@ -267,7 +267,7 @@
     let currentUserTimetable = {};
     function loadCurrentUserTimetable() {
 
-        fetch(`/${currentUserName}/timetable.json`)
+        fetch(`timetable/${currentUserName}/timetable.json`)
         .then(response => response.json())
         .then(timetable => {
             currentUserTimetable = timetable;
@@ -361,7 +361,7 @@
         // Fetch the timetable JSON data once
         async function loadTimetable(name) {
             try {
-                const response = await fetch(`/${name}/timetable.json`);
+                const response = await fetch(`timetable/${name}/timetable.json`);
                 const data = await response.json();
                 
                 timetableData = data;

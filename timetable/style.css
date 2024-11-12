@@ -110,7 +110,7 @@ body {
     background-color: #ffffff13;
     border-radius: 100px;
     mix-blend-mode:color-dodge;
-    background-image: url(/cross.svg);
+    background-image: url(timetable/cross.svg);
     background-repeat: no-repeat;
     background-size: 37%;
     background-position: center;
@@ -196,7 +196,7 @@ body {
     background-color: #0e0a13;
     border-radius: 100px;
     margin-left: auto;
-    background-image: url(/user.png);
+    background-image: url(timetable/user.png);
     background-size: contain;
 }
 
@@ -267,7 +267,7 @@ hl {
     min-height: 50px;
     background-color: #0e0a13;
     border-radius: 100px;
-    background-image: url(/user.png);
+    background-image: url(timetable/user.png);
     background-size: contain;
 }
 
