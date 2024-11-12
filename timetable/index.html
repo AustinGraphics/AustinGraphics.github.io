@@ -174,7 +174,7 @@
 </body>
 <script>
     function updateHomeValue(user, day, period, homeValue) {
-        fetch(`https://austin-graphics-github-io.vercel.app/timetable/api/${user}`, {
+        fetch(`https://austin-graphics-github-io.vercel.app/api/${user}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ day, period, homeValue })
