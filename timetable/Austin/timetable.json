@@ -1,0 +1,162 @@
+{
+    "monday": {
+        "period 1": {
+            "name": "Comp Sci",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "Free",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "Free",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "Alana",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "Free",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    },
+    "tuesday": {
+        "period 1": {
+            "name": "Graphic Design",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "Graphic Design",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "English",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "Maths",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "Comp Sci",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    },
+    "wednesday": {
+        "period 1": {
+            "name": "Maths",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "Comp Sci",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "Alana",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "English",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "English",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    },
+    "thursday": {
+        "period 1": {
+            "name": "Tutorial",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "English",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "Maths",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "Free",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "Free",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    },
+    "friday": {
+        "period 1": {
+            "name": "Graphic Design",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "Graphic Design",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "Tutorial",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "Comp Sci",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "Maths",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    }
+}

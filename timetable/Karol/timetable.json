@@ -1,0 +1,162 @@
+{
+    "monday": {
+        "period 1": {
+            "name": "Comp Sci",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "Free",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "IT",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "Free",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "Engineering",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    },
+    "tuesday": {
+        "period 1": {
+            "name": "Tutorial",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "IT",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "Free",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "Free",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "Comp Sci",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    },
+    "wednesday": {
+        "period 1": {
+            "name": "Free",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "Comp Sci",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "Engineering",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "Free",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "Free",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    },
+    "thursday": {
+        "period 1": {
+            "name": "Engineering",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "Free",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "Free",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "IT",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "Free",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    },
+    "friday": {
+        "period 1": {
+            "name": "IT",
+            "duration": "09:00 - 10:10",
+            "note": "",
+            "home": 0
+        },
+        "period 2": {
+            "name": "Tutorial",
+            "duration": "10:20 - 11:30",
+            "note": "",
+            "home": 0
+        },
+        "period 3": {
+            "name": "Engineering",
+            "duration": "11:30 - 12:40",
+            "note": "",
+            "home": 0
+        },
+        "period 4": {
+            "name": "Comp Sci",
+            "duration": "13:40 - 14:50",
+            "note": "",
+            "home": 0
+        },
+        "period 5": {
+            "name": "Free",
+            "duration": "14:50 - 16:00",
+            "note": "",
+            "home": 0
+        }
+    }
+}
