@@ -1,0 +1,8 @@
+{
+    "name": "timetable-app",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "echo 'No build step required'",
+      "start": "vercel dev"
+    }
+  }
