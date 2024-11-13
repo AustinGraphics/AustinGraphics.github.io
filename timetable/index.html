@@ -172,17 +172,13 @@
         <div class="context">A <span>glowing</span> free means you have a free at the same time.</div>
     </div>
 </body>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <script>
-    function updateHomeValue(user, day, period, homeValue) {
-        fetch(`https://austin-graphics-github-io.vercel.app/api/${user}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ day, period, homeValue })
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
-    }
+
+import { createClient } from '@supabase/supabase-js'
+
+// Create a single supabase client for interacting with your database
+const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key')
 
     var periodtoggle = 0;
     (document.querySelector('.periods')).addEventListener('click', function() {
@@ -276,77 +272,77 @@
     let timetableData = {};
     var currentUserName = 'Austin';
     let currentUserTimetable = {};
-    function loadCurrentUserTimetable() {
+    // function loadCurrentUserTimetable() {
 
-        fetch(`https://austin-graphics-github-io.vercel.app/timetable/data/${currentUserName}/timetable.json`)
-        .then(response => response.json())
-        .then(timetable => {
-            currentUserTimetable = timetable;
-            // Reference to the content body where we'll insert the schedules
-            const contentBody = document.getElementById("edit");
+    //     fetch(`https://austin-graphics-github-io.vercel.app/timetable/data/${currentUserName}/timetable.json`)
+    //     .then(response => response.json())
+    //     .then(timetable => {
+    //         currentUserTimetable = timetable;
+    //         // Reference to the content body where we'll insert the schedules
+    //         const contentBody = document.getElementById("edit");
 
-            // Loop through each day in the timetable
-            for (const [day, periods] of Object.entries(timetable)) {
-                // Create a container div for each day
-                const dayDiv = document.createElement("div");
-                dayDiv.classList.add("periods", day.toLowerCase());
+    //         // Loop through each day in the timetable
+    //         for (const [day, periods] of Object.entries(timetable)) {
+    //             // Create a container div for each day
+    //             const dayDiv = document.createElement("div");
+    //             dayDiv.classList.add("periods", day.toLowerCase());
 
-                // Add a heading for the day
-                const dayHeading = document.createElement("div");
-                dayHeading.classList.add("subheading");
-                dayHeading.textContent = day.charAt(0).toUpperCase() + day.slice(1);
-                dayDiv.appendChild(dayHeading);
+    //             // Add a heading for the day
+    //             const dayHeading = document.createElement("div");
+    //             dayHeading.classList.add("subheading");
+    //             dayHeading.textContent = day.charAt(0).toUpperCase() + day.slice(1);
+    //             dayDiv.appendChild(dayHeading);
 
-                // Loop through each period in the day
-                for (const periodData of Object.values(periods)) {
-                    // Create the main period div and set classes based on type
-                    const periodDiv = document.createElement("div");
-                    periodDiv.classList.add("period");
-                    if (periodData.name.toLowerCase() != "free") periodDiv.classList.add("disabled");
+    //             // Loop through each period in the day
+    //             for (const periodData of Object.values(periods)) {
+    //                 // Create the main period div and set classes based on type
+    //                 const periodDiv = document.createElement("div");
+    //                 periodDiv.classList.add("period");
+    //                 if (periodData.name.toLowerCase() != "free") periodDiv.classList.add("disabled");
 
-                    // Add a clr div for styling
-                    const clrDiv = document.createElement("div");
-                    clrDiv.classList.add("clr");
-                    periodDiv.appendChild(clrDiv);
+    //                 // Add a clr div for styling
+    //                 const clrDiv = document.createElement("div");
+    //                 clrDiv.classList.add("clr");
+    //                 periodDiv.appendChild(clrDiv);
 
-                    // Create the body div for the period details
-                    const bodyDiv = document.createElement("div");
-                    bodyDiv.classList.add("body");
-                    bodyDiv.textContent = periodData.name;
+    //                 // Create the body div for the period details
+    //                 const bodyDiv = document.createElement("div");
+    //                 bodyDiv.classList.add("body");
+    //                 bodyDiv.textContent = periodData.name;
 
-                    // Append extra details to body
-                    periodDiv.appendChild(bodyDiv);
+    //                 // Append extra details to body
+    //                 periodDiv.appendChild(bodyDiv);
 
-                    const switchDiv = document.createElement("div");
-                    switchDiv.classList.add("switch");
-                    if (periodData.home === 0 && periodData.name.toLowerCase() === "free") {
-                        switchDiv.classList.add("on");
-                    }
-                    if (periodData.name.toLowerCase() === "free") {
-                        switchDiv.addEventListener('click', () => {
-                            updateHomeValue('Oliver', 'monday', 'period 1', 1);
-                        })
-                    }
+    //                 const switchDiv = document.createElement("div");
+    //                 switchDiv.classList.add("switch");
+    //                 if (periodData.home === 0 && periodData.name.toLowerCase() === "free") {
+    //                     switchDiv.classList.add("on");
+    //                 }
+    //                 if (periodData.name.toLowerCase() === "free") {
+    //                     switchDiv.addEventListener('click', () => {
+    //                         updateHomeValue('Oliver', 'monday', 'period 1', 1);
+    //                     })
+    //                 }
 
-                    // Add the knob inside the switch
-                    const knobDiv = document.createElement("div");
-                    knobDiv.classList.add("knob");
-                    switchDiv.appendChild(knobDiv);
+    //                 // Add the knob inside the switch
+    //                 const knobDiv = document.createElement("div");
+    //                 knobDiv.classList.add("knob");
+    //                 switchDiv.appendChild(knobDiv);
 
-                    periodDiv.appendChild(switchDiv);
-                    // Append the period div to the day container
-                    dayDiv.appendChild(periodDiv);
-                }
+    //                 periodDiv.appendChild(switchDiv);
+    //                 // Append the period div to the day container
+    //                 dayDiv.appendChild(periodDiv);
+    //             }
 
-                // Append the entire day div to the content body
-                contentBody.appendChild(dayDiv);
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching timetable:", error);
-        });
-    }
-    loadCurrentUserTimetable();
+    //             // Append the entire day div to the content body
+    //             contentBody.appendChild(dayDiv);
+    //         }
+    //     })
+    //     .catch(error => {
+    //         console.error("Error fetching timetable:", error);
+    //     });
+    // }
+    // loadCurrentUserTimetable();
 
     async function sheetshow(name) {
         document.querySelector('.sheet').style.display = 'unset'
