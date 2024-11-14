@@ -381,6 +381,7 @@ hl {
     text-align: right;
     display: flex;
     flex-direction: column;
+    transition: all cubic-bezier(.18,1.31,.43,.98) 1s !important;
 }
 
 .extra .people {
@@ -502,6 +503,11 @@ hl {
     height: 30px;
 }
 
+.periods.collapsed .period:not(:nth-child(2)) .extra {
+    opacity: 0;
+    transition: all cubic-bezier(.18,1.31,.43,.98) 1s;
+}
+
 .periods.collapsed .period:not(:nth-child(-n + 4)) {
     opacity: 0;
     max-height: 0px !important;
@@ -615,16 +621,119 @@ hl {
     text-shadow: 0px 0px 10px #cab0ebc1;
 }
 
-.sheet .periods.blurred .period .body,
-.sheet .periods.blurred .period .extra {
+.periods.blurred .period .body,
+.periods.blurred .period .extra {
     filter: blur(10px);
     opacity: 0;
     transition: filter 0.1s ease, opacity 0.3s ease;
 }
 
-.sheet .periods .period .body,
-.sheet .periods .period .extra {
+.periods .period .body,
+.periods .period .extra {
     filter: blur(0);
     opacity: 1;
     transition: filter 0.3s ease, opacity 0.1s ease;
+}
+
+.sheet.onboarding {
+    transition: bottom cubic-bezier(0.25, 0.1, 0.25, 1) 0.8s !important;
+    display: flex;
+    flex-direction: row;
+}
+
+.sheet.onboarding .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    min-width: calc(100vw - 30px);
+    transition: margin-left cubic-bezier(0.25, 0.1, 0.25, 1) 0.4s;
+}
+
+.sheet.onboarding .logo {
+    width: 80px;
+    height: 80px;
+    background-image: url(loopimage.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 150px;
+}
+
+.sheet.onboarding .logo.profile {
+    width: 50px;
+    height: 50px;
+    background-image: url(person.svg);
+    margin-top: 50px;
+}
+
+.sheet.onboarding .title {
+    font-size: 37px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sheet.onboarding .subtitle {
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.sheet.onboarding .small {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: auto;
+    text-align: center;
+    width: calc(100% - 50px);
+}
+
+.sheet.onboarding .continue {
+    width: calc(100% - 50px);
+    height: 45px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background-color: #6a3dfdf5;
+}
+
+.sheet.onboarding .continue.bottom {
+    margin-top: auto;
+}
+
+.sheet.onboarding .profiles {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    margin-top: 30px;
+    width: calc(100% - 40px);
+}
+
+.sheet.onboarding .person {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #1d1824;
+    padding: 3px 20px 3px 10px;
+    border-radius: 10px;
+    transition: box-shadow cubic-bezier(0.25, 0.1, 0.25, 1) 1s;
+}
+
+.sheet.onboarding .person .icon {
+    min-width: 50px;
+    min-height: 50px;
+    background-color: #0e0a13;
+    border-radius: 100px;
+    background-image: url(user.png);
+    background-size: contain;
+}
+
+.sheet.onboarding .person .name {
+    font-size: 17px;
+    font-weight: 500;
 }
