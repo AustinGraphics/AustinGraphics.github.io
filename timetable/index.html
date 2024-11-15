@@ -281,6 +281,7 @@
     </div>
 </body>
 <script>
+    // onboardingshow();
     let timetables = {};
     const apiKey = '$2a$10$ti7MLEwo3Ovm7KVfd1cJbOxaz5J1/WKInCDTvk1hEPUBAp/8o3bWK';
 
@@ -389,7 +390,7 @@
     }, 10);
 
     let timetableData = {};
-    var currentUserName = 'Oliver';
+    var currentUserName = 'Austin';
     let currentUserTimetable = {};
     function loadCurrentUserTimetable() {
 
@@ -723,10 +724,10 @@
         });
         document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(person => {
             person.addEventListener('click', () => {
-                person.style.boxShadow = '0px 0px 25px #c1b6f951';
+                person.classList.add('glow');
                 document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(other => {
                     if (other != person) {
-                        other.style.boxShadow = 'none';
+                        other.classList.remove('glow');
                     }
                 });
             })

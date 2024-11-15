@@ -661,8 +661,8 @@ hl {
 }
 
 .sheet.onboarding .logo.profile {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-image: url(person.svg);
     margin-top: 50px;
 }
@@ -721,7 +721,11 @@ hl {
     background-color: #1d1824;
     padding: 3px 20px 3px 10px;
     border-radius: 10px;
-    transition: box-shadow cubic-bezier(0.25, 0.1, 0.25, 1) 1s;
+    transition: box-shadow cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s;
+}
+
+.sheet.onboarding .person.glow {
+    box-shadow: 0px 0px 10px #dad3ffbb;
 }
 
 .sheet.onboarding .person .icon {
