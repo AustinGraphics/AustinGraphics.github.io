@@ -282,6 +282,50 @@
 </body>
 <script>
     onboardingshow();
+
+    const dog = import.meta.env.VITE_DOG;
+    console.log(dog);
+    
+    const owner = "your-username"; // GitHub username
+    const repo = "your-repository"; // Repository name
+    const token = "your_personal_access_token"; // Replace with your PAT
+    const workflow_id = "update-file.yml"; // Name of the workflow file
+    const branch = "main"; // Branch to update
+
+    async function triggerGitHubAction(filePath, content, commitMessage) {
+        const url = `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflow_id}/dispatches`;
+
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+                Accept: "application/vnd.github.v3+json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                ref: branch, // The branch where the action runs
+                inputs: {
+                    file_path: filePath, // Dynamic file path
+                    content: btoa(content), // Base64-encoded dynamic content
+                    commit_message: commitMessage, // Dynamic commit message
+                },
+            }),
+        });
+
+        if (response.ok) {
+            console.log(`Workflow triggered successfully for ${filePath}!`);
+        } else {
+            console.error("Failed to trigger workflow:", await response.json());
+        }
+    }
+
+    // Example usage
+    triggerGitHubAction(
+        "dynamic/path/to/file1.txt",
+        "Dynamic content for file 1",
+        "Updating file 1 dynamically"
+    );
+
     let timetables = {};
     const apiKey = '$2a$10$ti7MLEwo3Ovm7KVfd1cJbOxaz5J1/WKInCDTvk1hEPUBAp/8o3bWK';
 
