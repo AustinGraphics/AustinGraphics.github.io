@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" crossorigin href="/assets/index-BaVcJ08k.css">
+</head>
+
+<body>
+    <div class="contentbody" id="home">
+        <div class="title">Morning!<div class="icon"></div>
+        </div>
+        <div class="day">You have 2 frees on a thursday.</div>
+        <div class="subheading">People in today's frees</div>
+        <div class="carousel">
+            <div class="person">
+                <div class="icon"></div>
+                <div class="name">Daniel</div>
+            </div>
+            <div class="person">
+                <div class="icon"></div>
+                <div class="name">Oliver</div>
+            </div>
+            <div class="person">
+                <div class="icon"></div>
+                <div class="name">Michal</div>
+            </div>
+            <div class="person">
+                <div class="icon"></div>
+                <div class="name">Thomas</div>
+            </div>
+            <div class="person">
+                <div class="icon"></div>
+                <div class="name">Karol</div>
+            </div>
+            <div class="person">
+                <div class="icon"></div>
+                <div class="name">Olek</div>
+            </div>
+            <div class="person">
+                <div class="icon"></div>
+                <div class="name">Theo</div>
+            </div>
+        </div>
+        <div>You have <hl>Tutorial</hl> in <hl>5 minutes</hl>
+        </div>
+        <div class="periods collapsed">
+            <div class="subheading">Periods<extra>5 Total</extra>
+            </div>
+            <div class="period">
+                <div class="clr"></div>
+                <div class="body">
+                    Loading
+                    <div class="extra">09:00 - 10:10</div>
+                </div>
+            </div>
+            <div class="period">
+                <div class="clr"></div>
+                <div class="body">
+                    Loading
+                    <div class="extra">10:10 - 11:30</div>
+                </div>
+            </div>
+            <div class="period">
+                <div class="clr"></div>
+                <div class="body">
+                    Loading
+                    <div class="extra">11:30 - 12:40</div>
+                </div>
+            </div>
+            <div class="period">
+                <div class="clr"></div>
+                <div class="body">
+                    Loading
+                    <div class="extra">13:40 - 14:50
+                    </div>
+                </div>
+            </div>
+            <div class="period">
+                <div class="clr"></div>
+                <div class="body">
+                    Free
+                    <div class="extra">14:50 - 16:00
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subheading">View timetable<extra>Synced</extra>
+        </div>
+        <div class="timetables">
+            <div class="person" id="Austin" onclick="sheetshow(this.id)">Austin</div>
+            <div class="person" id="Bartek" onclick="sheetshow(this.id)">Bartek</div>
+            <div class="person" id="Daniel" onclick="sheetshow(this.id)">Daniel</div>
+            <div class="person" id="Karol" onclick="sheetshow(this.id)">Karol</div>
+            <div class="person" id="Michal" onclick="sheetshow(this.id)">Michal</div>
+            <div class="person" id="Olek" onclick="sheetshow(this.id)">Olek</div>
+            <div class="person" id="Oliver" onclick="sheetshow(this.id)">Oliver</div>
+            <div class="person" id="Theo" onclick="sheetshow(this.id)">Theo</div>
+            <div class="person" id="Thomas" onclick="sheetshow(this.id)">Thomas</div>
+        </div>
+    </div>
+    <div class="contentbody" id="edit">
+        <div class="title">Edit<div class="icon"></div>
+        </div>
+        <div class="day">To free or not to free, that is the question.</div>
+        Toggling a free means you won't be available for that period every week. Your name will be hidden when someone
+        else has a free at the same time.
+    </div>
+    <div class="contentbody" id="you">
+        <div class="title">Profile</div>
+        <div class="day">This shits useless</div>
+        Change your picture and log out thats literally all, literally the only reason I put this here is because 3
+        pages at the bottom looks cooler than 2 🔥
+    </div>
+    <div class="tabs">
+        <div class="button selected" onclick="goto('home')" id="homebutton">
+            <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 23.6816 20.5566">
+                <g>
+                    <rect height="20.5566" opacity="0" width="23.6816" x="0" y="0" />
+                    <path
+                        d="M9.02344 18.9648L9.02344 13.2227C9.02344 12.7734 9.32617 12.4805 9.77539 12.4805L13.5547 12.4805C14.0137 12.4805 14.2969 12.7734 14.2969 13.2227L14.2969 18.9648ZM3.04688 18.3887C3.04688 19.7461 3.86719 20.5371 5.24414 20.5371L18.0859 20.5371C19.4629 20.5371 20.2734 19.7461 20.2734 18.3887L20.2734 10.6348L12.2461 3.90625C11.875 3.59375 11.4355 3.60352 11.0742 3.90625L3.04688 10.6348ZM0.839844 10.4297C1.11328 10.4297 1.33789 10.2832 1.54297 10.1172L11.3184 1.9043C11.4258 1.81641 11.5527 1.76758 11.6602 1.76758C11.7773 1.76758 11.8945 1.81641 12.002 1.9043L21.7871 10.1172C21.9824 10.2832 22.207 10.4297 22.4805 10.4297C23.0078 10.4297 23.3203 10.0488 23.3203 9.64844C23.3203 9.42383 23.2324 9.18945 23.0078 9.01367L12.832 0.46875C12.4609 0.15625 12.0605 0 11.6602 0C11.2598 0 10.8594 0.15625 10.4883 0.46875L0.3125 9.01367C0.0976562 9.18945 0 9.42383 0 9.64844C0 10.0488 0.3125 10.4297 0.839844 10.4297ZM18.0176 5.24414L20.4688 7.31445L20.4688 2.91016C20.4688 2.48047 20.1953 2.20703 19.7656 2.20703L18.7207 2.20703C18.3008 2.20703 18.0176 2.48047 18.0176 2.91016Z"
+                        fill="white" fill-opacity="0.85" />
+                </g>
+            </svg>
+            Home
+        </div>
+        <div class="button" onclick="goto('edit')" id="editbutton">
+            <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 29.7949 17.998">
+                <g>
+                    <rect height="17.998" opacity="0" width="29.7949" x="0" y="0" />
+                    <path
+                        d="M26.5137 14.9707C26.5137 16.9922 25.4883 17.998 23.4473 17.998L10.1074 17.998C8.06641 17.998 7.05078 16.9824 7.05078 14.9707L7.05078 11.0254L8.62305 11.0254L8.62305 15.0586C8.62305 15.9668 9.11133 16.4258 9.98047 16.4258L23.5938 16.4258C24.4629 16.4258 24.9414 15.9668 24.9414 15.0586L24.9414 11.0254L26.5137 11.0254ZM26.5137 3.04688L26.5137 6.98242L24.9414 6.98242L24.9414 2.95898C24.9414 2.05078 24.4629 1.5918 23.5938 1.5918L9.98047 1.5918C9.11133 1.5918 8.62305 2.05078 8.62305 2.95898L8.62305 6.98242L7.05078 6.98242L7.05078 3.04688C7.05078 1.03516 8.06641 0.0195312 10.1074 0.0195312L23.4473 0.0195312C25.4883 0.0195312 26.5137 1.02539 26.5137 3.04688Z"
+                        fill="white" fill-opacity="0.85" />
+                    <path
+                        d="M5.42969 16.7188C5.42969 17.373 4.90234 17.9102 4.24805 17.9102C3.59375 17.9102 3.05664 17.373 3.05664 16.7188C3.05664 16.0645 3.59375 15.5371 4.24805 15.5371C4.90234 15.5371 5.42969 16.0645 5.42969 16.7188Z"
+                        fill="white" fill-opacity="0.85" />
+                    <path
+                        d="M5.42969 12.8516C5.42969 13.5059 4.90234 14.0332 4.24805 14.0332C3.59375 14.0332 3.05664 13.5059 3.05664 12.8516C3.05664 12.1875 3.59375 11.6602 4.24805 11.6602C4.90234 11.6602 5.42969 12.1875 5.42969 12.8516Z"
+                        fill="white" fill-opacity="0.85" />
+                    <path
+                        d="M5.42969 5.10742C5.42969 5.76172 4.90234 6.29883 4.24805 6.29883C3.59375 6.29883 3.05664 5.76172 3.05664 5.10742C3.05664 4.45312 3.59375 3.92578 4.24805 3.92578C4.90234 3.92578 5.42969 4.45312 5.42969 5.10742Z"
+                        fill="white" fill-opacity="0.85" />
+                    <path
+                        d="M5.42969 1.23047C5.42969 1.89453 4.90234 2.42188 4.24805 2.42188C3.59375 2.42188 3.05664 1.89453 3.05664 1.23047C3.05664 0.576172 3.59375 0.0488281 4.24805 0.0488281C4.90234 0.0488281 5.42969 0.576172 5.42969 1.23047Z"
+                        fill="white" fill-opacity="0.85" />
+                    <path
+                        d="M4.24805 10.3223C4.7168 10.3223 5.13672 10.0781 5.36133 9.69727L26.5137 9.69727C26.8945 9.69727 27.207 9.38477 27.207 9.00391C27.207 8.62305 26.8945 8.32031 26.5137 8.32031L5.38086 8.32031C5.15625 7.91992 4.7168 7.66602 4.24805 7.66602C3.51562 7.66602 2.91016 8.26172 2.91016 8.99414C2.91016 9.72656 3.51562 10.3223 4.24805 10.3223Z"
+                        fill="white" fill-opacity="0.85" />
+                </g>
+            </svg>
+            Edit
+        </div>
+        <div class="button" onclick="goto('you')" id="youbutton">
+            <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20.2832 19.9316">
+                <g>
+                    <rect height="19.9316" opacity="0" width="20.2832" x="0" y="0" />
+                    <path
+                        d="M9.96094 19.9219C15.459 19.9219 19.9219 15.459 19.9219 9.96094C19.9219 4.46289 15.459 0 9.96094 0C4.46289 0 0 4.46289 0 9.96094C0 15.459 4.46289 19.9219 9.96094 19.9219ZM9.96094 18.2617C5.37109 18.2617 1.66016 14.5508 1.66016 9.96094C1.66016 5.37109 5.37109 1.66016 9.96094 1.66016C14.5508 1.66016 18.2617 5.37109 18.2617 9.96094C18.2617 14.5508 14.5508 18.2617 9.96094 18.2617ZM16.6406 16.3965L16.6113 16.2891C16.1328 14.8535 13.5547 13.2812 9.96094 13.2812C6.37695 13.2812 3.79883 14.8535 3.31055 16.2793L3.28125 16.3965C5.03906 18.1348 8.05664 19.1504 9.96094 19.1504C11.875 19.1504 14.8633 18.1445 16.6406 16.3965ZM9.96094 11.6211C11.8457 11.6406 13.3105 10.0391 13.3105 7.93945C13.3105 5.9668 11.8359 4.33594 9.96094 4.33594C8.08594 4.33594 6.60156 5.9668 6.61133 7.93945C6.62109 10.0391 8.08594 11.6016 9.96094 11.6211Z"
+                        fill="white" fill-opacity="0.85" />
+                </g>
+            </svg>
+            You
+        </div>
+    </div>
+    <div class="sheet">
+        <div class="top">
+            <div class="title">Thomas</div>
+            <div class="drag"></div>
+            <div class="cross" onclick="sheethide()"></div>
+        </div>
+        <div class="segmentedcontrols">
+            <div class="item" id="mon">Mon</div>
+            <div class="item" id="tue">Tue</div>
+            <div class="item" id="wed">Wed</div>
+            <div class="item" id="thu">Thu</div>
+            <div class="item" id="fri">Fri</div>
+            <div class="selector"></div>
+        </div>
+        <div class="periods">
+            <div class="period">
+                <div class="clr"></div>
+                <div class="body">
+                    Loading
+                    <div class="extra">09:00 - 10:10</div>
+                </div>
+            </div>
+            <div class="period">
+                <div class="clr"></div>
+                <div class="body">
+                    Loading
+                    <div class="extra">10:20 - 11:30</div>
+                </div>
+            </div>
+            <div class="period">
+                <div class="clr"></div>
+                <div class="body">
+                    Loading
+                    <div class="extra">11:30 - 12:40</div>
+                </div>
+            </div>
+            <div class="period highlight">
+                <div class="clr"></div>
+                <div class="body">
+                    Loading
+                    <div class="extra">13:40 - 14:50</div>
+                </div>
+            </div>
+            <div class="period highlight">
+                <div class="clr"></div>
+                <div class="body">
+                    Loading
+                    <div class="extra">14:50 - 16:00</div>
+                </div>
+            </div>
+        </div>
+        <div class="context">A <span>glowing</span> free means you have a free at the same time.</div>
+    </div>
+    <div class="sheet onboarding">
+        <div class="page">
+            <div class="logo"></div>
+            <div class="title">Welcome to Loop</div>
+            <div class="subtitle">Stay in the loop with everyone else.</div>
+            <div class="small">Alright I'm done with the professional shit bro this is fucking SICK<br>I can't believe I
+                made this app actually work lol</div>
+            <div class="continue">Continue</div>
+        </div>
+        <div class="page">
+            <div class="logo profile"></div>
+            <div class="title">Who are you?</div>
+            <div class="subtitle">You can change this in your profile later.</div>
+            <div class="profiles">
+                <div class="person" onclick="currentUserName = 'Austin';">
+                    <div class="icon"></div>
+                    <div class="name">Austin</div>
+                </div>
+                <div class="person" onclick="currentUserName = 'Bartek';">
+                    <div class="icon"></div>
+                    <div class="name">Bartek</div>
+                </div>
+                <div class="person" onclick="currentUserName = 'Daniel';">
+                    <div class="icon"></div>
+                    <div class="name">Daniel</div>
+                </div>
+                <div class="person" onclick="currentUserName = 'Karol';">
+                    <div class="icon"></div>
+                    <div class="name">Karol</div>
+                </div>
+                <div class="person" onclick="currentUserName = 'Michal';">
+                    <div class="icon"></div>
+                    <div class="name">Michal</div>
+                </div>
+                <div class="person" onclick="currentUserName = 'Olek';">
+                    <div class="icon"></div>
+                    <div class="name">Olek</div>
+                </div>
+                <div class="person" onclick="currentUserName = 'Oliver';">
+                    <div class="icon"></div>
+                    <div class="name">Oliver</div>
+                </div>
+                <div class="person" onclick="currentUserName = 'Theo';">
+                    <div class="icon"></div>
+                    <div class="name">Theo</div>
+                </div>
+                <div class="person" onclick="currentUserName = 'Thomas';">
+                    <div class="icon"></div>
+                    <div class="name">Thomas</div>
+                </div>
+            </div>
+            <div class="continue bottom people disabled close" onclick="onboardinghide()">Finish</div>
+        </div>
+    </div>
+</body>
+<script>
+    onboardingshow();
+    let timetables = {};
+    const apiKey = '$2a$10$ti7MLEwo3Ovm7KVfd1cJbOxaz5J1/WKInCDTvk1hEPUBAp/8o3bWK';
+
+    const url = `https://api.jsonbin.io/v3/b/6734fceaad19ca34f8c99be9`;
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'X-Master-Key': apiKey
+        }
+    })
+        .then(response => response.json())
+        .then(timetable => {
+            console.log(timetable.record)
+            timetables = timetable.record;
+        })
+
+    var periodtoggle = 0;
+    (document.querySelector('.periods')).addEventListener('click', function () {
+        if (!periodtoggle) {
+            document.querySelector('.periods').classList.remove('collapsed');
+            document.querySelector('.periods').classList.add('expanded');
+            periodtoggle = 1;
+        } else {
+            document.querySelector('.periods').classList.add('collapsed');
+            document.querySelector('.periods').classList.remove('expanded');
+            periodtoggle = 0;
+        }
+    })
+
+    const defaultpage = 'home'
+    document.querySelectorAll('.contentbody').forEach(contentbody => {
+        if (contentbody.id == defaultpage) {
+            contentbody.style.display = 'flex';
+        } else {
+            contentbody.style.display = 'none';
+        }
+        document.querySelectorAll('.tabs .button').forEach(element => {
+            if (element.id == (defaultpage + 'button')) {
+                element.classList.add('selected');
+            } else {
+                element.classList.remove('selected');
+            }
+        });
+    });
+    function goto(page) {
+        document.querySelectorAll('.contentbody').forEach(contentbody => {
+            document.querySelectorAll('.tabs .button').forEach(element => {
+                if (element.id == (page + 'button')) {
+                    element.classList.add('selected');
+                } else {
+                    element.classList.remove('selected');
+                }
+            });
+            if (contentbody.id == page) {
+                contentbody.style.display = 'flex'
+            } else {
+                contentbody.style.display = 'none';
+            }
+        });
+    }
+
+    const absoluteDiv = document.querySelector('.tabs');
+
+    // Function to check if two rectangles overlap
+    function isOverlapping(rect1, rect2) {
+        return !(
+            rect1.right < rect2.left ||
+            rect1.left > rect2.right ||
+            rect1.bottom < rect2.top ||
+            rect1.top > rect2.bottom
+        );
+    }
+
+    // Function to check for overlaps
+    function checkForOverlaps() {
+        // Get all divs on the page
+        const allDivs = document.querySelectorAll('div');
+
+        // Get the bounding rectangle of the absolute div
+        const absoluteRect = absoluteDiv.getBoundingClientRect();
+
+        // Check each other div to see if it overlaps, ignoring the absoluteDiv itself and its children
+        for (const div of allDivs) {
+            // Exclude the absolutely positioned div itself and any children of absoluteDiv
+            if (div !== absoluteDiv && !absoluteDiv.contains(div) && !div.classList.contains('contentbody')) {
+                const otherRect = div.getBoundingClientRect();
+                if (isOverlapping(absoluteRect, otherRect)) {
+                    return true; // Return true immediately if an overlap is found
+                }
+            }
+        }
+        return false; // Return false if no overlaps are found
+    }
+
+    // Run the checkForOverlaps function every 500 milliseconds
+    setInterval(function () {
+        if (checkForOverlaps()) { // Call the function and check its return value
+            absoluteDiv.style.backgroundColor = 'rgba(134, 134, 134, 0.136)';
+            absoluteDiv.style.borderTop = '1px solid #ffffff05';
+        } else {
+            absoluteDiv.style.backgroundColor = '#000000';
+            absoluteDiv.style.borderTop = 'none';
+        }
+    }, 10);
+
+    let timetableData = {};
+    let currentUserName = 'Austin';
+    let currentUserTimetable = {};
+    function loadCurrentUserTimetable() {
+
+        currentUserTimetable = timetables[currentUserName];
+        console.log(currentUserTimetable)
+        // Reference to the content body where we'll insert the schedules
+        const contentBody = document.getElementById("edit");
+
+        // Loop through each day in the timetable
+        for (const [day, periods] of Object.entries(currentUserTimetable)) {
+            // Create a container div for each day
+            const dayDiv = document.createElement("div");
+            dayDiv.classList.add("periods", day.toLowerCase());
+
+            // Add a heading for the day
+            const dayHeading = document.createElement("div");
+            dayHeading.classList.add("subheading");
+            dayHeading.textContent = day.charAt(0).toUpperCase() + day.slice(1);
+            dayDiv.appendChild(dayHeading);
+
+            // Loop through each period in the day
+            for (const periodData of Object.values(periods)) {
+                // Create the main period div and set classes based on type
+                const periodDiv = document.createElement("div");
+                periodDiv.classList.add("period");
+                if (periodData.name.toLowerCase() != "free") periodDiv.classList.add("disabled");
+
+                // Add a clr div for styling
+                const clrDiv = document.createElement("div");
+                clrDiv.classList.add("clr");
+                periodDiv.appendChild(clrDiv);
+
+                // Create the body div for the period details
+                const bodyDiv = document.createElement("div");
+                bodyDiv.classList.add("body");
+                bodyDiv.textContent = periodData.name;
+
+                // Append extra details to body
+                periodDiv.appendChild(bodyDiv);
+
+                const switchDiv = document.createElement("div");
+                switchDiv.classList.add("switch");
+                if (periodData.home === 0 && periodData.name.toLowerCase() === "free") {
+                    switchDiv.classList.add("on");
+                }
+
+                // Add the knob inside the switch
+                const knobDiv = document.createElement("div");
+                knobDiv.classList.add("knob");
+                switchDiv.appendChild(knobDiv);
+
+                periodDiv.appendChild(switchDiv);
+                // Append the period div to the day container
+                dayDiv.appendChild(periodDiv);
+            }
+
+            // Append the entire day div to the content body
+            contentBody.appendChild(dayDiv);
+        }
+    }
+
+    async function sheetshow(name) {
+        document.querySelector('.sheet').style.display = 'unset';
+        setTimeout(() => {
+            document.querySelector('.sheet').classList.add('show');
+        }, 10);
+        document.querySelectorAll('.contentbody').forEach(contentBody => {
+            contentBody.classList.add('shrink');
+            contentBody.style.backgroundColor = 'rgb(3, 3, 3)';
+            contentBody.style.scale = '0.9';
+            contentBody.style.top = '-40px';
+            contentBody.style.borderRadius = '10px';
+        });
+        document.getElementById(name).classList.add('highlighted');
+
+        // STARTING DATE ON SLIDER IS HERE!!!!
+        document.querySelectorAll('.segmentedcontrols .item#mon').forEach(day => {
+            document.querySelectorAll('.segmentedcontrols .item').forEach(other => {
+                if (other.id != day.id) {
+                    other.classList.remove('selected');
+                }
+            });
+            day.classList.add('selected');
+            console.log(document.querySelector('.segmentedcontrols .selector').clientWidth * (Array.prototype.indexOf.call(document.querySelector('.segmentedcontrols').children, day)));
+            document.querySelector('.segmentedcontrols .selector').style.marginLeft = (document.querySelector('.segmentedcontrols .selector').clientWidth * (Array.prototype.indexOf.call(document.querySelector('.segmentedcontrols').children, day))) + 'px';
+        });
+
+        document.querySelector('.sheet .top .title').innerHTML = name;
+
+        // Fetch the timetable JSON data once
+        async function loadTimetable(name) {
+            timetableData = timetables[name];
+            updatePeriodsWithBlur('mon', currentUserTimetable);
+        }
+
+        // Call the function with the user's name
+        loadTimetable(name);
+    }
+
+    function sheethide() {
+        const draggableDiv = document.querySelector('.sheet');
+        draggableDiv.classList.remove("show");
+        draggableDiv.style.bottom = `-100vh`; // Reset position
+        document.querySelectorAll('.contentbody').forEach(contentBody => {
+            contentBody.classList.remove('shrink');
+            contentBody.style.backgroundColor = 'unset';
+            contentBody.style.scale = '1';
+            contentBody.style.borderRadius = '0px';
+            contentBody.style.top = '0px';
+            contentBody.style.transition = 'scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s';
+        });
+        setTimeout(() => {
+            draggableDiv.style.display = 'none';
+            document.querySelectorAll('.person').forEach(person => {
+                person.classList.remove('highlighted');
+            });
+        }, 500);
+    }
+
+    const draggableDiv = document.querySelector(".sheet");
+    let startY = 0;
+    let lastY = 0;
+    let velocity = 0;
+    let dragging = false;
+
+    draggableDiv.addEventListener("touchstart", (e) => {
+        // Check if 'show' class is in the div's classList
+        if (!draggableDiv.classList.contains("show")) return;
+
+        const touch = e.touches[0];
+        startY = touch.clientY;
+        lastY = startY;
+        dragging = startY <= 1000;
+
+        draggableDiv.style.transition = 'none';
+        document.querySelectorAll('.contentbody').forEach(contentBody => {
+            contentBody.classList.add('shrink');
+        });
+    });
+
+    function interpolateColor(color1, color2, percentage) {
+        // Extract RGB components from the first color
+        const [r1, g1, b1] = color1.match(/\d+/g).map(Number);
+        // Extract RGB components from the second color
+        const [r2, g2, b2] = color2.match(/\d+/g).map(Number);
+
+        // Interpolate each component based on the percentage
+        const r = Math.round(r1 + (r2 - r1) * percentage);
+        const g = Math.round(g1 + (g2 - g1) * percentage);
+        const b = Math.round(b1 + (b2 - b1) * percentage);
+
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    draggableDiv.addEventListener("touchmove", (e) => {
+        if (!dragging) return;
+
+        const touch = e.touches[0];
+        const deltaY = touch.clientY - startY;
+        velocity = touch.clientY - lastY; // Calculate velocity
+        lastY = touch.clientY;
+
+        // Update the position of the div as the user drags
+        draggableDiv.classList.remove('show');
+        draggableDiv.style.bottom = `-${deltaY}px`;
+
+        // Calculate drag progress as a percentage (0 at the top, 1 at the bottom)
+        const progress = Math.min(1, deltaY / draggableDiv.offsetHeight);
+
+        // Update the background color of each .contentbody
+        document.querySelectorAll('.contentbody').forEach(contentBody => {
+            // Define the initial color and the target color (black)  
+            const initialColor = "rgb(3, 3, 3)";
+            const targetColor = "rgb(0, 0, 0)";
+
+            // Interpolate the color based on the progress
+            contentBody.style.transition = 'none';
+            contentBody.style.backgroundColor = interpolateColor(initialColor, targetColor, progress);
+            contentBody.style.scale = (0.9 + (1 - 0.9) * progress);
+            var topCalc = (-40 * (1 - progress));
+            var borderCalc = (10 * (1 - progress));
+            contentBody.style.top = `${topCalc}px`;
+            contentBody.style.borderRadius = `${borderCalc}px`
+        });
+    });
+
+    draggableDiv.addEventListener("touchend", () => {
+        if (!dragging) return;
+        dragging = false;
+
+        const divHeight = draggableDiv.offsetHeight;
+        const draggedAmount = lastY - startY;
+
+        draggableDiv.style.transition = 'bottom cubic-bezier(.12,.71,.49,1) 0.5s';
+
+        // Only allow removal if dragged downwards (positive draggedAmount) 
+        if ((draggedAmount > divHeight / 2 || velocity > 10) && draggedAmount > 0) {
+            draggableDiv.classList.remove("show");
+            draggableDiv.style.bottom = `-100vh`; // Reset position
+            document.querySelectorAll('.contentbody').forEach(contentBody => {
+                contentBody.classList.remove('shrink');
+                contentBody.style.backgroundColor = 'unset';
+                contentBody.style.scale = '1';
+                contentBody.style.borderRadius = '0px';
+                contentBody.style.top = '0px';
+                contentBody.style.transition = 'scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s';
+            });
+            setTimeout(() => {
+                draggableDiv.style.display = 'none';
+                document.querySelectorAll('.person').forEach(person => {
+                    person.classList.remove('highlighted');
+                });
+            }, 500);
+        } else {
+            draggableDiv.classList.add('show');
+            draggableDiv.style.bottom = `0px`; // Reset position if condition isn't met
+            document.querySelectorAll('.contentbody').forEach(contentBody => {
+                contentBody.classList.add('shrink');
+                contentBody.style.backgroundColor = 'rgb(3, 3, 3)';
+                contentBody.style.scale = '0.9';
+                contentBody.style.top = '-40px';
+                contentBody.style.borderRadius = '10px';
+                contentBody.style.transition = 'scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s';
+            });
+        }
+    });
+
+    document.querySelectorAll('.segmentedcontrols .item').forEach(day => {
+        day.addEventListener('click', async () => {
+            document.querySelectorAll('.segmentedcontrols .item').forEach(other => {
+                other.classList.toggle('selected', other === day);
+            });
+
+            const selector = document.querySelector('.segmentedcontrols .selector');
+            selector.style.marginLeft = (selector.clientWidth * Array.prototype.indexOf.call(day.parentNode.children, day)) + 'px';
+
+            updatePeriodsWithBlur(day.id, currentUserTimetable);
+        });
+    });
+
+    function updatePeriodsWithBlur(dayId, currentUserTimetable) {
+        const periodsContainer = document.querySelector('.sheet .periods');
+        const dayMap = { mon: 'monday', tue: 'tuesday', wed: 'wednesday', thu: 'thursday', fri: 'friday' };
+        const selectedDay = dayMap[dayId];
+        const dayData = timetableData[selectedDay];
+        const userDayData = currentUserTimetable[selectedDay];
+
+        const periods = Array.from(periodsContainer.querySelectorAll('.period'));
+
+        if (dayData) {
+            periodsContainer.classList.add('blurred');
+
+            setTimeout(() => {
+                periods.forEach((periodDiv, index) => {
+                    const periodKey = `period ${index + 1}`;
+                    const periodData = dayData[periodKey];
+
+                    if (periodData) {
+                        const bodyDiv = periodDiv.querySelector('.body');
+                        const extraDiv = periodDiv.querySelector('.extra');
+                        const mainText = periodData.name;
+
+                        if (bodyDiv) {
+                            bodyDiv.firstChild.nodeValue = mainText + " ";
+                            periodDiv.classList.toggle('highlight', mainText === "Free" && userDayData[periodKey]?.name === "Free");
+                        }
+
+                        if (extraDiv) {
+                            extraDiv.innerHTML = `${periodData.duration}`;
+                            if (mainText === "Free") {
+                                extraDiv.innerHTML += `<div class="people">Insert, people, here</div>`;
+                            }
+                        }
+                    }
+                });
+
+                periodsContainer.classList.remove('blurred');
+            }, 75);
+        }
+    }
+
+    function loadDayTimetable() {
+        const periodsContainer = document.querySelector('.contentbody#home>.periods');
+        periodsContainer.classList.add('blurred');
+
+        setTimeout(() => {
+            const periods = Array.from(periodsContainer.querySelectorAll('.period'));
+            periods.forEach((periodDiv, index) => {
+                const periodKey = `period ${index + 1}`;
+                const periodData = currentUserTimetable.monday[periodKey];
+
+                if (periodData) {
+                    const bodyDiv = periodDiv.querySelector('.body');
+                    const extraDiv = periodDiv.querySelector('.extra');
+                    const mainText = periodData.name;
+
+                    if (bodyDiv) {
+                        bodyDiv.firstChild.nodeValue = mainText + " ";
+                    }
+
+                    if (extraDiv) {
+                        extraDiv.innerHTML = `${periodData.duration}`;
+                        if (mainText === "Free") {
+                            extraDiv.innerHTML += `<div class="people">Insert, people, here</div>`;
+                        }
+                    }
+                }
+            });
+            periodsContainer.classList.remove('blurred');
+        }, 75);
+    }
+
+    async function onboardingshow() {
+        setTimeout(() => {
+            document.querySelector('.sheet.onboarding').style.display = 'flex'
+            setTimeout(() => {
+                document.querySelector('.sheet.onboarding').classList.add('show');
+            }, 10);
+            document.querySelectorAll('.contentbody').forEach(contentBody => {
+                contentBody.classList.add('shrink');
+                contentBody.style.backgroundColor = 'rgb(3, 3, 3)';
+                contentBody.style.scale = '0.9';
+                contentBody.style.top = '-40px';
+                contentBody.style.borderRadius = '10px';
+            });
+        }, 300);
+        document.querySelector('.sheet.onboarding').querySelectorAll('.continue:not(.close)').forEach(button => {
+            button.addEventListener('click', () => {
+                button.parentElement.style.marginLeft = '-100%';
+            })
+        });
+        document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(person => {
+            person.addEventListener('click', () => {
+                person.classList.add('select');
+                document.querySelector('.sheet.onboarding').querySelector('.continue.people').classList.remove('disabled');
+                document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(other => {
+                    if (other != person) {
+                        other.classList.remove('select');
+                    }
+                });
+            })
+        });
+    }
+
+    function onboardinghide() {
+        loadCurrentUserTimetable();
+        loadDayTimetable();
+        const draggableDiv = document.querySelector('.sheet.onboarding');
+        draggableDiv.classList.remove("show");
+        draggableDiv.style.bottom = `-100vh`; // Reset position
+        document.querySelectorAll('.contentbody').forEach(contentBody => {
+            contentBody.classList.remove('shrink');
+            contentBody.style.backgroundColor = 'unset';
+            contentBody.style.scale = '1';
+            contentBody.style.borderRadius = '0px';
+            contentBody.style.top = '0px';
+            contentBody.style.transition = 'scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s';
+        });
+        setTimeout(() => {
+            draggableDiv.style.display = 'none';
+            document.querySelectorAll('.person').forEach(person => {
+                person.classList.remove('highlighted');
+            });
+        }, 500);
+    }
+</script>
+
+</html>
