@@ -636,7 +636,7 @@ hl {
 }
 
 .sheet.onboarding {
-    transition: bottom cubic-bezier(0.25, 0.1, 0.25, 1) 0.8s !important;
+    transition: bottom cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s !important;
     display: flex;
     flex-direction: row;
 }
@@ -700,10 +700,16 @@ hl {
     justify-content: center;
     font-weight: 700;
     background-color: #6a3dfdf5;
+    transition: background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s;
 }
 
 .sheet.onboarding .continue.bottom {
     margin-top: auto;
+}
+
+.sheet.onboarding .continue.disabled {
+    background-color: #1b1b1b;
+    color: rgba(255, 255, 255, 0.288);
 }
 
 .sheet.onboarding .profiles {
@@ -718,14 +724,14 @@ hl {
     display: flex;
     gap: 10px;
     align-items: center;
-    background-color: #1d1824;
+    background-color: #131313;
     padding: 3px 20px 3px 10px;
     border-radius: 10px;
-    transition: box-shadow cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s;
+    transition: background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.1s;
 }
 
-.sheet.onboarding .person.glow {
-    box-shadow: 0px 0px 10px #dad3ffbb;
+.sheet.onboarding .person.select {
+    background-color: #261e31;
 }
 
 .sheet.onboarding .person .icon {

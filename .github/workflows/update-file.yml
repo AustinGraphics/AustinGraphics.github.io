@@ -1,0 +1,30 @@
+name: Update File via API
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_path:
+        description: 'The path of the file to update'
+        required: true
+      content:
+        description: 'The new content for the file'
+        required: true
+      commit_message:
+        description: 'The commit message'
+        required: true
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Update File
+        run: |
+          echo "${{ inputs.content }}" | base64 -d > "${{ github.workspace }}/${{ inputs.file_path }}"
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add "${{ inputs.file_path }}"
+          git commit -m "${{ inputs.commit_message }}"
+          git push

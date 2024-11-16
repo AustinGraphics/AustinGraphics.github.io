@@ -239,49 +239,49 @@
             <div class="title">Who are you?</div>
             <div class="subtitle">You can change this in your profile later.</div>
             <div class="profiles">
-                <div class="person">
+                <div class="person" onclick="currentUserName = 'Austin';">
                     <div class="icon"></div>
                     <div class="name">Austin</div>
                 </div>
-                <div class="person">
+                <div class="person" onclick="currentUserName = 'Bartek';">
                     <div class="icon"></div>
                     <div class="name">Bartek</div>
                 </div>
-                <div class="person">
+                <div class="person" onclick="currentUserName = 'Daniel';">
                     <div class="icon"></div>
                     <div class="name">Daniel</div>
                 </div>
-                <div class="person">
+                <div class="person" onclick="currentUserName = 'Karol';">
                     <div class="icon"></div>
                     <div class="name">Karol</div>
                 </div>
-                <div class="person">
+                <div class="person" onclick="currentUserName = 'Michal';">
                     <div class="icon"></div>
                     <div class="name">Michal</div>
                 </div>
-                <div class="person">
+                <div class="person" onclick="currentUserName = 'Olek';">
                     <div class="icon"></div>
                     <div class="name">Olek</div>
                 </div>
-                <div class="person">
+                <div class="person" onclick="currentUserName = 'Oliver';">
                     <div class="icon"></div>
                     <div class="name">Oliver</div>
                 </div>
-                <div class="person">
+                <div class="person" onclick="currentUserName = 'Theo';">
                     <div class="icon"></div>
                     <div class="name">Theo</div>
                 </div>
-                <div class="person">
+                <div class="person" onclick="currentUserName = 'Thomas';">
                     <div class="icon"></div>
                     <div class="name">Thomas</div>
                 </div>
             </div>
-            <div class="continue bottom">Continue</div>
+            <div class="continue bottom people disabled close" onclick="onboardinghide()">Finish</div>
         </div>
     </div>
 </body>
 <script>
-    // onboardingshow();
+    onboardingshow();
     let timetables = {};
     const apiKey = '$2a$10$ti7MLEwo3Ovm7KVfd1cJbOxaz5J1/WKInCDTvk1hEPUBAp/8o3bWK';
 
@@ -296,8 +296,6 @@
         .then(timetable => {
             console.log(timetable.record)
             timetables = timetable.record;
-            loadCurrentUserTimetable();
-            loadDayTimetable();
         })
 
     var periodtoggle = 0;
@@ -390,7 +388,7 @@
     }, 10);
 
     let timetableData = {};
-    var currentUserName = 'Austin';
+    let currentUserName = 'Austin';
     let currentUserTimetable = {};
     function loadCurrentUserTimetable() {
 
@@ -717,21 +715,44 @@
                 contentBody.style.borderRadius = '10px';
             });
         }, 300);
-        document.querySelector('.sheet.onboarding').querySelectorAll('.continue').forEach(button => {
+        document.querySelector('.sheet.onboarding').querySelectorAll('.continue:not(.close)').forEach(button => {
             button.addEventListener('click', () => {
                 button.parentElement.style.marginLeft = '-100%';
             })
         });
         document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(person => {
             person.addEventListener('click', () => {
-                person.classList.add('glow');
+                person.classList.add('select');
+                document.querySelector('.sheet.onboarding').querySelector('.continue.people').classList.remove('disabled');
                 document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(other => {
                     if (other != person) {
-                        other.classList.remove('glow');
+                        other.classList.remove('select');
                     }
                 });
             })
         });
+    }
+
+    function onboardinghide() {
+        loadCurrentUserTimetable();
+        loadDayTimetable();
+        const draggableDiv = document.querySelector('.sheet.onboarding');
+        draggableDiv.classList.remove("show");
+        draggableDiv.style.bottom = `-100vh`; // Reset position
+        document.querySelectorAll('.contentbody').forEach(contentBody => {
+            contentBody.classList.remove('shrink');
+            contentBody.style.backgroundColor = 'unset';
+            contentBody.style.scale = '1';
+            contentBody.style.borderRadius = '0px';
+            contentBody.style.top = '0px';
+            contentBody.style.transition = 'scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s';
+        });
+        setTimeout(() => {
+            draggableDiv.style.display = 'none';
+            document.querySelectorAll('.person').forEach(person => {
+                person.classList.remove('highlighted');
+            });
+        }, 500);
     }
 </script>
 
