@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#000000">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="logo.png">
 </head>
 
 <body>
@@ -49,8 +49,7 @@
                 <div class="name">Theo</div>
             </div>
         </div>
-        <div>You have <hl>Tutorial</hl> in <hl>5 minutes</hl>
-        </div>
+        <div>You have <hl>Period</hl> in <hl>___ minutes</hl> (Ignore this for now)</div>
         <div class="periods collapsed">
             <div class="subheading">Periods<extra>5 Total</extra>
             </div>
@@ -86,7 +85,7 @@
             <div class="period">
                 <div class="clr"></div>
                 <div class="body">
-                    Free
+                    Loading
                     <div class="extra">14:50 - 16:00
                     </div>
                 </div>
@@ -95,28 +94,78 @@
         <div class="subheading">View timetable<extra>Synced</extra>
         </div>
         <div class="timetables">
-            <div class="person" id="Austin" onclick="sheetshow(this.id)">Austin</div>
-            <div class="person" id="Bartek" onclick="sheetshow(this.id)">Bartek</div>
-            <div class="person" id="Daniel" onclick="sheetshow(this.id)">Daniel</div>
-            <div class="person" id="Karol" onclick="sheetshow(this.id)">Karol</div>
-            <div class="person" id="Michal" onclick="sheetshow(this.id)">Michal</div>
-            <div class="person" id="Olek" onclick="sheetshow(this.id)">Olek</div>
-            <div class="person" id="Oliver" onclick="sheetshow(this.id)">Oliver</div>
-            <div class="person" id="Theo" onclick="sheetshow(this.id)">Theo</div>
-            <div class="person" id="Thomas" onclick="sheetshow(this.id)">Thomas</div>
+            <div class="person" onclick="sheetshow('Austin')">Austin</div>
+            <div class="person" onclick="sheetshow('Bartek')">Bartek</div>
+            <div class="person" onclick="sheetshow('Daniel')">Daniel</div>
+            <div class="person" onclick="sheetshow('Karol')">Karol</div>
+            <div class="person" onclick="sheetshow('Michal')">Michal</div>
+            <div class="person" onclick="sheetshow('Olek')">Olek</div>
+            <div class="person" onclick="sheetshow('Oliver')">Oliver</div>
+            <div class="person" onclick="sheetshow('Theo')">Theo</div>
+            <div class="person" onclick="sheetshow('Thomas')">Thomas</div>
         </div>
     </div>
     <div class="contentbody" id="lunch">
-        <div class="title">Lunch<div class="icon"></div>
+        <div class="title">
+            Lunch
+            <div class="icon"></div>
         </div>
-        <div class="day">Fat cunt</div>
-        
+        <div class="day">This week is Week 3</div>
+        THIS PAGE CURRENTLY ONLY SHOWS WEEK 1'S LUNCH MENU PER DAY. IT IS A WORK IN PROGRESS.
+        <div class="subheading">Today's Lunch Menu<extra>Monday</extra></div>
+        <div class="menu">
+            <div class="menuitem">
+                <div class="type">Concept</div>
+                <div class="food">Channa Masala and Pilau Rice Served With A Charred Chapatti And Chutneys</div>
+                <div class="contents">Wheat (Gluten), Milk</div>
+            </div>
+            <div class="menuitem">
+                <div class="type">Concept</div>
+                <div class="food">Chicken Tikka and Pilau Rice Served With A Naan And Chutneys</div>
+                <div class="contents">Almonds (Nuts) Cashews (Nuts) Peanuts Mustard Tree nuts</div>
+            </div>
+            <div class="menuitem">
+                <div class="type">Pizza</div>
+                <div class="food">Margherita</div>
+                <div class="contents">Wheat (Gluten), Barley, Milk, Egg, V, Ve</div>
+            </div>
+            <div class="menuitem">
+                <div class="type">Pizza</div>
+                <div class="food">Spicy Beef</div>
+                <div class="contents">Wheat (Gluten), Wheat, Milk</div>
+            </div>
+            <div class="menuitem">
+                <div class="type">Snack</div>
+                <div class="food">Macaroni Cheese & Crispy Onions</div>
+                <div class="contents">Wheat (Gluten), Milk, V</div>
+            </div>
+            <div class="menuitem">
+                <div class="type">Pasta</div>
+                <div class="food">Pomodoro</div>
+                <div class="contents">Wheat (Gluten), Milk, V</div>
+            </div>
+            <div class="menuitem">
+                <div class="type">Potato</div>
+                <div class="food">The Humble Spud</div>
+                <div class="contents">Jacket Or Sweet Potato With Your Choice Of Beans, Cheese, Tuna Mayo Or Chicken Tikka</div>
+            </div>
+            <div class="menuitem">
+                <div class="type">Side</div>
+                <div class="food">House Salad</div>
+            </div>
+            <div class="menuitem">
+                <div class="type">Side</div>
+                <div class="food">Beet and Cumin Bhajis</div>
+                <div class="contents">Wheat (Gluten)</div>
+            </div>
+        </div>
     </div>
     <div class="contentbody" id="you">
         <div class="title">Profile</div>
         <div class="day">This shits useless</div>
-        Change your picture and log out thats literally all, literally the only reason I put this here is because 3
-        pages at the bottom looks cooler than 2 🔥
+        I honestly cba  to make the profile page look nice yet so heres a simple log out button in case you somehow fucked up the onboarding steps 🔥
+        <div class="subheading" id="loggedinas">Logged in as _______</div>
+        <div class="logout" onclick="logout();">Logout</div>
     </div>
     <div class="tabs">
         <div class="button selected" onclick="goto('home')" id="homebutton">
@@ -131,28 +180,13 @@
             </svg>
             Home
         </div>
-        <div class="button" onclick="goto('lunch')" id="lunch">
+        <div class="button" onclick="goto('lunch')" id="lunchbutton">
             <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 29.7949 17.998">
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 28.9534 29.0742">
                 <g>
-                    <rect height="17.998" opacity="0" width="29.7949" x="0" y="0" />
+                    <rect height="29.0742" opacity="0" width="28.9534" x="0" y="0" />
                     <path
-                        d="M26.5137 14.9707C26.5137 16.9922 25.4883 17.998 23.4473 17.998L10.1074 17.998C8.06641 17.998 7.05078 16.9824 7.05078 14.9707L7.05078 11.0254L8.62305 11.0254L8.62305 15.0586C8.62305 15.9668 9.11133 16.4258 9.98047 16.4258L23.5938 16.4258C24.4629 16.4258 24.9414 15.9668 24.9414 15.0586L24.9414 11.0254L26.5137 11.0254ZM26.5137 3.04688L26.5137 6.98242L24.9414 6.98242L24.9414 2.95898C24.9414 2.05078 24.4629 1.5918 23.5938 1.5918L9.98047 1.5918C9.11133 1.5918 8.62305 2.05078 8.62305 2.95898L8.62305 6.98242L7.05078 6.98242L7.05078 3.04688C7.05078 1.03516 8.06641 0.0195312 10.1074 0.0195312L23.4473 0.0195312C25.4883 0.0195312 26.5137 1.02539 26.5137 3.04688Z"
-                        fill="white" fill-opacity="0.85" />
-                    <path
-                        d="M5.42969 16.7188C5.42969 17.373 4.90234 17.9102 4.24805 17.9102C3.59375 17.9102 3.05664 17.373 3.05664 16.7188C3.05664 16.0645 3.59375 15.5371 4.24805 15.5371C4.90234 15.5371 5.42969 16.0645 5.42969 16.7188Z"
-                        fill="white" fill-opacity="0.85" />
-                    <path
-                        d="M5.42969 12.8516C5.42969 13.5059 4.90234 14.0332 4.24805 14.0332C3.59375 14.0332 3.05664 13.5059 3.05664 12.8516C3.05664 12.1875 3.59375 11.6602 4.24805 11.6602C4.90234 11.6602 5.42969 12.1875 5.42969 12.8516Z"
-                        fill="white" fill-opacity="0.85" />
-                    <path
-                        d="M5.42969 5.10742C5.42969 5.76172 4.90234 6.29883 4.24805 6.29883C3.59375 6.29883 3.05664 5.76172 3.05664 5.10742C3.05664 4.45312 3.59375 3.92578 4.24805 3.92578C4.90234 3.92578 5.42969 4.45312 5.42969 5.10742Z"
-                        fill="white" fill-opacity="0.85" />
-                    <path
-                        d="M5.42969 1.23047C5.42969 1.89453 4.90234 2.42188 4.24805 2.42188C3.59375 2.42188 3.05664 1.89453 3.05664 1.23047C3.05664 0.576172 3.59375 0.0488281 4.24805 0.0488281C4.90234 0.0488281 5.42969 0.576172 5.42969 1.23047Z"
-                        fill="white" fill-opacity="0.85" />
-                    <path
-                        d="M4.24805 10.3223C4.7168 10.3223 5.13672 10.0781 5.36133 9.69727L26.5137 9.69727C26.8945 9.69727 27.207 9.38477 27.207 9.00391C27.207 8.62305 26.8945 8.32031 26.5137 8.32031L5.38086 8.32031C5.15625 7.91992 4.7168 7.66602 4.24805 7.66602C3.51562 7.66602 2.91016 8.26172 2.91016 8.99414C2.91016 9.72656 3.51562 10.3223 4.24805 10.3223Z"
+                        d="M20.546 7.98922C22.4503 6.59274 24.2277 1.05563 22.0792 0.58688C19.8917 0.137661 19.3253 5.94821 20.546 7.98922ZM20.7804 8.37008C23.7003 8.29196 29.462 3.66305 27.4699 1.6611C25.4874-0.321323 20.8683 5.4404 20.7804 8.37008ZM21.171 8.59469C23.1925 9.83493 29.0226 9.25875 28.5734 7.09079C28.1046 4.91305 22.5577 6.70993 21.171 8.59469ZM0.682744 28.4091C1.29798 29.0244 2.24524 29.3955 3.35853 28.6923L9.70618 24.7177L8.24134 23.292C7.92884 22.999 7.9386 22.5595 8.22181 22.2763C8.49524 21.9931 8.9347 21.9736 9.22767 22.2666L10.9464 23.9267L12.3234 23.0673L10.2238 21.0556C9.92103 20.7529 9.92103 20.3232 10.2042 20.04C10.4874 19.7568 10.9171 19.7373 11.2199 20.0302L13.5734 22.2861L20.1163 18.1748C24.296 15.5478 25.0675 11.3779 21.9425 8.21383L20.8683 7.12008C18.1046 4.31735 14.4718 4.63961 11.8644 7.69625L15.0773 10.8017C15.38 11.0947 15.38 11.5244 15.1066 11.8076C14.8331 12.1006 14.3839 12.1201 14.0812 11.8271L10.9757 8.8486L10.1261 10.1865L12.4308 12.4033C12.7335 12.706 12.7238 13.1455 12.4406 13.4287C12.1574 13.7021 11.7277 13.7216 11.4347 13.4287L9.35462 11.4463L0.38001 25.6943C-0.284052 26.749-0.010615 27.7158 0.682744 28.4091Z"
                         fill="white" fill-opacity="0.85" />
                 </g>
             </svg>
@@ -178,11 +212,11 @@
             <div class="cross" onclick="sheethide()"></div>
         </div>
         <div class="segmentedcontrols">
-            <div class="item" id="mon">Mon</div>
-            <div class="item" id="tue">Tue</div>
-            <div class="item" id="wed">Wed</div>
-            <div class="item" id="thu">Thu</div>
-            <div class="item" id="fri">Fri</div>
+            <div class="item" id="monday">Mon</div>
+            <div class="item" id="tuesday">Tue</div>
+            <div class="item" id="wednesday">Wed</div>
+            <div class="item" id="thursday">Thu</div>
+            <div class="item" id="friday">Fri</div>
             <div class="selector"></div>
         </div>
         <div class="periods">
@@ -238,44 +272,71 @@
             <div class="title">Who are you?</div>
             <div class="subtitle">You can change this in your profile later.</div>
             <div class="profiles">
-                <div class="person" onclick="currentUserName = 'Austin';">
+                <div class="person" id="Austin" onclick="currentUserName = 'Austin';">
                     <div class="icon"></div>
                     <div class="name">Austin</div>
                 </div>
-                <div class="person" onclick="currentUserName = 'Bartek';">
+                <div class="person" id="Bartek" onclick="currentUserName = 'Bartek';">
                     <div class="icon"></div>
                     <div class="name">Bartek</div>
                 </div>
-                <div class="person" onclick="currentUserName = 'Daniel';">
+                <div class="person" id="Daniel" onclick="currentUserName = 'Daniel';">
                     <div class="icon"></div>
                     <div class="name">Daniel</div>
                 </div>
-                <div class="person" onclick="currentUserName = 'Karol';">
+                <div class="person" id="Karol" onclick="currentUserName = 'Karol';">
                     <div class="icon"></div>
                     <div class="name">Karol</div>
                 </div>
-                <div class="person" onclick="currentUserName = 'Michal';">
+                <div class="person" id="Michal" onclick="currentUserName = 'Michal';">
                     <div class="icon"></div>
                     <div class="name">Michal</div>
                 </div>
-                <div class="person" onclick="currentUserName = 'Olek';">
+                <div class="person" id="Olek" onclick="currentUserName = 'Olek';">
                     <div class="icon"></div>
                     <div class="name">Olek</div>
                 </div>
-                <div class="person" onclick="currentUserName = 'Oliver';">
+                <div class="person" id="Oliver" onclick="currentUserName = 'Oliver';">
                     <div class="icon"></div>
                     <div class="name">Oliver</div>
                 </div>
-                <div class="person" onclick="currentUserName = 'Theo';">
+                <div class="person" id="Theo" onclick="currentUserName = 'Theo';">
                     <div class="icon"></div>
                     <div class="name">Theo</div>
                 </div>
-                <div class="person" onclick="currentUserName = 'Thomas';">
+                <div class="person" id="Thomas" onclick="currentUserName = 'Thomas';">
                     <div class="icon"></div>
                     <div class="name">Thomas</div>
                 </div>
             </div>
-            <div class="continue bottom people disabled close" onclick="onboardinghide()">Finish</div>
+            <div class="continue bottom people disabled">Continue</div>
+        </div>
+        <div class="page">
+            <div class="logo check"></div>
+            <div class="title">You're all set!</div>
+            <div class="subtitle">Now please don't break anything I beg</div>
+            <div class="continue bottom close" onclick="onboardinghide()">Finish</div>
+        </div>
+    </div>
+    <div class="sheet webapp">
+        <div class="page">
+            <div class="logo"></div>
+            <div class="title">I need to be an app!</div>
+            <div class="subtitle">You're currently viewing this in the browser! Please add the website to the homescreen to continue.</div>
+            <div class="continue bottom">How do I do that?</div>
+        </div>
+        <div class="page">
+            <div class="logo figure"></div>
+            <div class="title">Which browser?</div>
+            <div class="subtitle">The process differs slightly depending on your chosen browser.</div>
+            <div class="subheading">Safari:</div>
+            <div class="body">Tap the <span class="nobreak"><img src="/share.svg" alt=""></span> share button at the bottom.<br>Then scroll until you find <span class="nobreak"><img style="width: 20px; height: 20px; margin: 0px 4px -5px 4px;" src="/add.svg" alt=""></span> Add to Home Screen.</div>
+            <div class="subheading">Chrome (iOS):</div>
+            <div class="body">Tap the <span class="nobreak"><img src="/share.svg" alt=""></span> share button at the top right corner.<br>Then scroll until you find <span class="nobreak"><img style="width: 20px; height: 20px; margin: 0px 4px -5px 4px;" src="/add.svg" alt=""></span> Add to Home Screen.</div>
+            <div class="subheading">Chrome (Android):</div>
+            <div class="body">Tap the <span class="nobreak"><img style="width: 20px; margin: 0px 4px -5px 4px;" src="/elipsis.svg" alt=""></span> three dots in the top right corner.<br>Then tap <span class="nobreak"><img style="width: 20px; height: 20px; margin: 0px 4px -5px 4px;" src="/add.svg" alt=""></span> Add to Home Screen.</div>
+            <div class="subheading">Other:</div>
+            <div class="body">Not all browsers let you add websites to your home screen. Can't find the option? Open this site in Chrome or Safari.</div>
         </div>
     </div>
 </body>

@@ -64,7 +64,7 @@ body {
 .sheet {
     background-color: rgba(7, 7, 7);
     width: calc(100vw - 30px);
-    height: calc(100vh - 15px);
+    height: calc(100% - 15px);
     position: fixed;
     left: 0px;
     bottom: -100vh;
@@ -180,7 +180,7 @@ body {
     border-radius: 10px;
     position: absolute;
     top: -40px;
-    height: 90vh;
+    touch-action: none;
 }
 
 .contentbody>.title {
@@ -314,7 +314,7 @@ hl {
     gap: 10px;
     font-weight: normal;
     font-size: medium;
-    transition: all cubic-bezier(.18,1.31,.43,.98) 1s;
+    transition: all cubic-bezier(.2,.1,.08,1) 0.4s;
 }
 
 .periods .period .clr {
@@ -340,7 +340,7 @@ hl {
     background-color: #cab0eb;
 }
 
-.contentbody#home>.periods .period:nth-child(2) {
+.contentbody#home>.periods .highlight {
     background-color: #1d1824;
 }
 
@@ -667,6 +667,13 @@ hl {
     margin-top: 50px;
 }
 
+.sheet.onboarding .logo.check {
+    width: 60px;
+    height: 60px;
+    background-image: url(check.svg);
+    margin-top: 200px;
+}
+
 .sheet.onboarding .title {
     font-size: 37px;
     font-weight: 600;
@@ -746,4 +753,135 @@ hl {
 .sheet.onboarding .person .name {
     font-size: 17px;
     font-weight: 500;
+}
+
+.sheet.webapp {
+    padding: 0px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.sheet.webapp .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    min-width: calc(100vw - 40px);
+    padding: 0px 20px;
+    transition: margin-left cubic-bezier(0.25, 0.1, 0.25, 1) 0.4s;
+    overflow-y: scroll;
+}
+
+.sheet.webapp .logo {
+    min-width: 60px;
+    min-height: 60px;
+    background-image: url(app.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 100px;
+}
+
+.sheet.webapp .logo.figure {
+    background-image: url(figure.svg);
+    margin-top: 60px;
+}
+
+.sheet.webapp .title {
+    font-size: 37px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sheet.webapp .subtitle {
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.sheet.webapp .subheading {
+    margin-top: 25px;
+}
+
+.sheet.webapp .page .body .nobreak {
+    white-space: nowrap;
+}
+
+.sheet.webapp .page .body {
+    width: 100%;
+}
+
+.sheet.webapp .page .body:last-child {
+    padding-bottom: 100px;
+}
+
+.sheet.webapp .page .body .nobreak img {
+    width: 25px;
+    height: 25px;
+    margin-bottom: -5px;
+}
+
+.sheet.webapp .continue {
+    width: calc(100% - 50px);
+    height: 45px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background-color: #6a3dfdf5;
+    transition: background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s;
+}
+
+.sheet.webapp .continue.bottom {
+    margin-top: auto;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu .menuitem {
+    width: calc(100% - 15px);
+    max-width: calc(100% - 15px);
+    background-color: #0e0a13;
+    border-radius: 7px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: normal;
+    font-size: medium;
+    transition: all cubic-bezier(.18,1.31,.43,.98) 1s;
+}
+
+.menu .menuitem .type {
+    color: rgba(255, 255, 255, 0.25);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.menu .menuitem .contents {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.contentbody#you .logout {
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: center;
+    background: rgb(26, 0, 0);
+    padding: 10px;
+    border: solid 1px rgba(255, 0, 0, 0.212);
+    border-radius: 7px;
 }

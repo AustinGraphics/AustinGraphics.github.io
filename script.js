@@ -1,12 +1,24 @@
-onboardingshow();
+if (!window.navigator.standalone) {
+    webappshow();
+} else {
+    if (!localStorage.getItem('profile')) {
+        onboardingshow();
+    }
+}
 
 let timetables = {};
+let dayOfTheWeek = getDayOfWeek();
+let currentUserTimetable = {};
+// let dayOfTheWeek = 'tuesday';
 
 fetch('/data/periods.json')
     .then(response => response.json())
     .then(timetable => {
         console.log(timetable)
         timetables = timetable;
+        currentUserTimetable = timetables[localStorage.getItem('profile')];
+        loadDayTimetable();
+        document.getElementById('loggedinas').innerHTML = 'Logged in as ' + localStorage.getItem('profile');
     })
 
 var periodtoggle = 0;
@@ -98,9 +110,18 @@ setInterval(function () {
     }
 }, 10);
 
+function behindShrink(contentBody) {
+    contentBody.classList.add('shrink');
+    contentBody.style.backgroundColor = 'rgb(3, 3, 3)';
+    contentBody.style.scale = '0.9';
+    contentBody.style.top = '-40px';
+    contentBody.style.borderRadius = '10px';
+    document.querySelector('html').style.overflowY = 'hidden';
+}
+
 let timetableData = {};
-let currentUserName = 'Austin';
-let currentUserTimetable = {};
+let selectedUserName = '';
+console.log(localStorage.getItem('profile'));
 
 async function sheetshow(name) {
     document.querySelector('.sheet').style.display = 'unset';
@@ -108,16 +129,12 @@ async function sheetshow(name) {
         document.querySelector('.sheet').classList.add('show');
     }, 10);
     document.querySelectorAll('.contentbody').forEach(contentBody => {
-        contentBody.classList.add('shrink');
-        contentBody.style.backgroundColor = 'rgb(3, 3, 3)';
-        contentBody.style.scale = '0.9';
-        contentBody.style.top = '-40px';
-        contentBody.style.borderRadius = '10px';
+        behindShrink(contentBody);
     });
     document.getElementById(name).classList.add('highlighted');
 
     // STARTING DATE ON SLIDER IS HERE!!!!
-    document.querySelectorAll('.segmentedcontrols .item#mon').forEach(day => {
+    document.querySelectorAll(`.segmentedcontrols .item${dayOfTheWeek}`).forEach(day => {
         document.querySelectorAll('.segmentedcontrols .item').forEach(other => {
             if (other.id != day.id) {
                 other.classList.remove('selected');
@@ -133,10 +150,11 @@ async function sheetshow(name) {
     // Fetch the timetable JSON data once
     async function loadTimetable(name) {
         timetableData = timetables[name];
-        updatePeriodsWithBlur('mon', currentUserTimetable);
+        updatePeriodsWithBlur(dayOfTheWeek, currentUserTimetable, name);
     }
 
     // Call the function with the user's name
+    selectedUserName = name;
     loadTimetable(name);
 }
 
@@ -151,6 +169,7 @@ function sheethide() {
         contentBody.style.borderRadius = '0px';
         contentBody.style.top = '0px';
         contentBody.style.transition = 'scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s';
+        document.querySelector('html').style.overflowY = 'unset';
     });
     setTimeout(() => {
         draggableDiv.style.display = 'none';
@@ -258,11 +277,7 @@ draggableDiv.addEventListener("touchend", () => {
         draggableDiv.classList.add('show');
         draggableDiv.style.bottom = `0px`; // Reset position if condition isn't met
         document.querySelectorAll('.contentbody').forEach(contentBody => {
-            contentBody.classList.add('shrink');
-            contentBody.style.backgroundColor = 'rgb(3, 3, 3)';
-            contentBody.style.scale = '0.9';
-            contentBody.style.top = '-40px';
-            contentBody.style.borderRadius = '10px';
+            behindShrink(contentBody);
             contentBody.style.transition = 'scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s';
         });
     }
@@ -277,18 +292,17 @@ document.querySelectorAll('.segmentedcontrols .item').forEach(day => {
         const selector = document.querySelector('.segmentedcontrols .selector');
         selector.style.marginLeft = (selector.clientWidth * Array.prototype.indexOf.call(day.parentNode.children, day)) + 'px';
 
-        updatePeriodsWithBlur(day.id, currentUserTimetable);
+        updatePeriodsWithBlur(day.id, currentUserTimetable, selectedUserName);
     });
 });
 
-function updatePeriodsWithBlur(dayId, currentUserTimetable) {
+function updatePeriodsWithBlur(dayId, currentUserTimetable, selectedname) {
     const periodsContainer = document.querySelector('.sheet .periods');
-    const dayMap = { mon: 'monday', tue: 'tuesday', wed: 'wednesday', thu: 'thursday', fri: 'friday' };
-    const selectedDay = dayMap[dayId];
-    const dayData = timetableData[selectedDay];
-    const userDayData = currentUserTimetable[selectedDay];
+    const dayData = timetableData[dayId];
+    const userDayData = currentUserTimetable[dayId];
 
     const periods = Array.from(periodsContainer.querySelectorAll('.period'));
+    console.log(dayId);
 
     if (dayData) {
         periodsContainer.classList.add('blurred');
@@ -311,7 +325,7 @@ function updatePeriodsWithBlur(dayId, currentUserTimetable) {
                     if (extraDiv) {
                         extraDiv.innerHTML = `${periodData.duration}`;
                         if (mainText === "Free") {
-                            extraDiv.innerHTML += `<div class="people">Insert, people, here</div>`;
+                            extraDiv.innerHTML += `<div class="people">${((frees[dayId][periodKey]).filter(name => name !== selectedname)).join(', ')}</div>`;
                         }
                     }
                 }
@@ -330,7 +344,7 @@ function loadDayTimetable() {
         const periods = Array.from(periodsContainer.querySelectorAll('.period'));
         periods.forEach((periodDiv, index) => {
             const periodKey = `period ${index + 1}`;
-            const periodData = currentUserTimetable.monday[periodKey];
+            const periodData = currentUserTimetable[dayOfTheWeek][periodKey];
 
             if (periodData) {
                 const bodyDiv = periodDiv.querySelector('.body');
@@ -344,7 +358,7 @@ function loadDayTimetable() {
                 if (extraDiv) {
                     extraDiv.innerHTML = `${periodData.duration}`;
                     if (mainText === "Free") {
-                        extraDiv.innerHTML += `<div class="people">Insert, people, here</div>`;
+                        extraDiv.innerHTML += `<div class="people">${((frees[dayOfTheWeek][periodKey]).filter(name => name !== localStorage.getItem('profile'))).join(', ')}</div>`;
                     }
                 }
             }
@@ -353,18 +367,31 @@ function loadDayTimetable() {
     }, 75);
 }
 
-async function onboardingshow() {
+function webappshow() {
+    setTimeout(() => {
+        document.querySelector('.sheet.webapp').style.display = 'flex'
+        setTimeout(() => {
+            document.querySelector('.sheet.webapp').classList.add('show');
+        }, 10);
+        document.querySelectorAll('.contentbody').forEach(contentBody => {
+            behindShrink(contentBody);
+        });
+    }, 300);
+    document.querySelector('.sheet.webapp').querySelectorAll('.continue').forEach(button => {
+        button.addEventListener('click', () => {
+            button.parentElement.style.marginLeft = '-100vw';
+        })
+    });
+}
+
+function onboardingshow() {
     setTimeout(() => {
         document.querySelector('.sheet.onboarding').style.display = 'flex'
         setTimeout(() => {
             document.querySelector('.sheet.onboarding').classList.add('show');
         }, 10);
         document.querySelectorAll('.contentbody').forEach(contentBody => {
-            contentBody.classList.add('shrink');
-            contentBody.style.backgroundColor = 'rgb(3, 3, 3)';
-            contentBody.style.scale = '0.9';
-            contentBody.style.top = '-40px';
-            contentBody.style.borderRadius = '10px';
+            behindShrink(contentBody);
         });
     }, 300);
     document.querySelector('.sheet.onboarding').querySelectorAll('.continue:not(.close)').forEach(button => {
@@ -375,6 +402,9 @@ async function onboardingshow() {
     document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(person => {
         person.addEventListener('click', () => {
             person.classList.add('select');
+            console.log(person.id)
+            localStorage.setItem('profile', person.id);
+            console.log(localStorage.getItem('profile'));
             document.querySelector('.sheet.onboarding').querySelector('.continue.people').classList.remove('disabled');
             document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(other => {
                 if (other != person) {
@@ -386,7 +416,7 @@ async function onboardingshow() {
 }
 
 function onboardinghide() {
-    currentUserTimetable = timetables[currentUserName];
+    currentUserTimetable = timetables[localStorage.getItem('profile')];
     loadDayTimetable();
     const draggableDiv = document.querySelector('.sheet.onboarding');
     draggableDiv.classList.remove("show");
@@ -398,6 +428,7 @@ function onboardinghide() {
         contentBody.style.borderRadius = '0px';
         contentBody.style.top = '0px';
         contentBody.style.transition = 'scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s';
+        document.querySelector('html').style.overflowY = 'unset';
     });
     setTimeout(() => {
         draggableDiv.style.display = 'none';
@@ -405,4 +436,122 @@ function onboardinghide() {
             person.classList.remove('highlighted');
         });
     }, 500);
+}
+
+function displayMenu(week, day) {
+    document.querySelector('.contentbody#lunch .subheading extra').innerHTML = day.charAt(0).toUpperCase() + day.slice(1);;
+    const menuDiv = document.querySelector('.menu');
+
+    // Clear previous menu items
+    menuDiv.innerHTML = '';
+
+    // Fetch the menu data from the specified URL
+    fetch('/data/lunch.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(menuData => {
+            // Validate week and day
+            const weekKey = `week${week}`;
+            if (!menuData[weekKey] || !menuData[weekKey][day]) {
+                console.error('Invalid week or day');
+                menuDiv.innerHTML = `<p>No menu available for Week ${week}, ${day}.</p>`;
+                return;
+            }
+
+            const dayMenu = menuData[weekKey][day];
+
+            // Generate menu items
+            dayMenu.forEach(item => {
+                const menuItemDiv = document.createElement('div');
+                menuItemDiv.classList.add('menuitem');
+
+                const typeDiv = document.createElement('div');
+                typeDiv.classList.add('type');
+                typeDiv.textContent = item.type;
+
+                const foodDiv = document.createElement('div');
+                foodDiv.classList.add('food');
+                foodDiv.textContent = item.name;
+
+                const contentsDiv = document.createElement('div');
+                contentsDiv.classList.add('contents');
+                contentsDiv.textContent = item.contents;
+
+                // Append all parts to the menu item
+                menuItemDiv.appendChild(typeDiv);
+                menuItemDiv.appendChild(foodDiv);
+                menuItemDiv.appendChild(contentsDiv);
+
+                // Append the menu item to the main menu div
+                menuDiv.appendChild(menuItemDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching menu data:', error);
+            menuDiv.innerHTML = `<p>Failed to load menu data. Please try again later.</p>`;
+        });
+}
+
+function getDayOfWeek() {
+    const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    const currentDate = new Date();
+    const dayIndex = currentDate.getDay(); // Returns an integer (0-6)
+    return daysOfWeek[dayIndex];
+}
+
+// Example usage: Display the menu for week 1, Monday
+displayMenu(1, dayOfTheWeek);
+
+let frees = {
+    monday: {},
+    tuesday: {},
+    wednesday: {},
+    thursday: {},
+    friday: {}
+};
+
+// Fetch the periods.json file (ensure it's correctly served from the server)
+fetch('/data/periods.json')
+    .then(response => response.json())
+    .then(data => {
+        // Iterate through each person
+        for (let person in data) {
+            let schedule = data[person];
+
+            // Iterate through each weekday
+            for (let day in schedule) {
+                let periods = schedule[day];
+
+                // Iterate through each period in the day
+                for (let period in periods) {
+                    let periodData = periods[period];
+
+                    // Check if the person is free for this period
+                    if (periodData.name === "Free") {
+                        // If this period is not yet in the frees object, initialize it as an empty array
+                        if (!frees[day][period]) {
+                            frees[day][period] = [];
+                        }
+
+                        // Add the person's name to the array for this period
+                        frees[day][period].push(person);
+                    }
+                }
+            }
+        }
+
+        // Log the final frees object
+        console.log(frees);
+    })
+    .catch(error => {
+        console.error('Error loading periods.json:', error);
+    });
+
+function logout() {
+    localStorage.removeItem('profile');
+    location.reload();
 }

@@ -3,161 +3,111 @@
         "monday": {
             "period 1": {
                 "name": "Comp Sci",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Alana",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "tuesday": {
             "period 1": {
                 "name": "Graphic Design",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Graphic Design",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "English",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Maths",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Comp Sci",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "wednesday": {
             "period 1": {
                 "name": "Maths",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Comp Sci",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Alana",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "English",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "English",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "thursday": {
             "period 1": {
                 "name": "Tutorial",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "English",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Maths",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "friday": {
             "period 1": {
                 "name": "Graphic Design",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Graphic Design",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Tutorial",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Comp Sci",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Maths",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         }
     },
@@ -165,161 +115,111 @@
         "monday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Business",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Maths",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Accounting",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Tutorial",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "tuesday": {
             "period 1": {
                 "name": "Business",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Maths",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Accounting",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "wednesday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Tutorial",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Accounting",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "thursday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Accounting",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Maths",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Business",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "friday": {
             "period 1": {
                 "name": "Maths",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Business",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         }
     },
@@ -327,161 +227,111 @@
         "monday": {
             "period 1": {
                 "name": "Accounting",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "IT",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Engineering",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "tuesday": {
             "period 1": {
                 "name": "IT",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Engineering",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Accounting",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "wednesday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Accounting",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Engineering",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "thursday": {
             "period 1": {
                 "name": "Tutorial",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Engineering",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "IT",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "friday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "IT",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Tutorial",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Accounting",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         }
     },
@@ -489,161 +339,111 @@
         "monday": {
             "period 1": {
                 "name": "Comp Sci",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "IT",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Engineering",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "tuesday": {
             "period 1": {
                 "name": "Tutorial",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "IT",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Comp Sci",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "wednesday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Comp Sci",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Engineering",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "thursday": {
             "period 1": {
                 "name": "Engineering",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "IT",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "friday": {
             "period 1": {
                 "name": "IT",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Tutorial",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Engineering",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Comp Sci",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         }
     },
@@ -651,161 +451,111 @@
         "monday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "IT",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Engineering",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "tuesday": {
             "period 1": {
                 "name": "IT",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Business",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Tutorial",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "wednesday": {
             "period 1": {
                 "name": "Business",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Engineering",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "thursday": {
             "period 1": {
                 "name": "Engineering",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Business",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "IT",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "friday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "IT",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Engineering",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Tutorial",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Business",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         }
     },
@@ -813,161 +563,111 @@
         "monday": {
             "period 1": {
                 "name": "Physics",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Comp Sci",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Maths",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "tuesday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Comp Sci",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Maths",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Physics",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "wednesday": {
             "period 1": {
                 "name": "Tutorial",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Physics",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Maths",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "thursday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Maths",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Tutorial",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Comp Sci",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "friday": {
             "period 1": {
                 "name": "Comp Sci",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Physics",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         }
     },
@@ -975,161 +675,111 @@
         "monday": {
             "period 1": {
                 "name": "Physics",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Maths",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Engineering",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "tuesday": {
             "period 1": {
                 "name": "Maths",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Engineering",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Tutorial",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Physics",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "wednesday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Physics",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Engineering",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "thursday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Engineering",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Maths",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "friday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Maths",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Physics",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Tutorial",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         }
     },
@@ -1137,161 +787,111 @@
         "monday": {
             "period 1": {
                 "name": "Physics",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "German",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Comp Sci",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "tuesday": {
             "period 1": {
                 "name": "Tutorial",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "German",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Comp Sci",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Maths",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Physics",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "wednesday": {
             "period 1": {
                 "name": "Maths",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Physics",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Comp Sci",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "thursday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Comp Sci",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Maths",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "German",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "friday": {
             "period 1": {
                 "name": "German",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Tutorial",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Physics",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Maths",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         }
     },
@@ -1299,161 +899,111 @@
         "monday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Free",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Engineering",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Maths",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "tuesday": {
             "period 1": {
                 "name": "Tutorial",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Engineering",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Physics",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "wednesday": {
             "period 1": {
                 "name": "Physics",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Free",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Maths",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Engineering",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "thursday": {
             "period 1": {
                 "name": "Maths",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Engineering",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Physics",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Free",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         },
         "friday": {
             "period 1": {
                 "name": "Free",
-                "duration": "09:00 - 10:10",
-                "note": "",
-                "home": 0
+                "duration": "09:00 - 10:10"
             },
             "period 2": {
                 "name": "Tutorial",
-                "duration": "10:20 - 11:30",
-                "note": "",
-                "home": 0
+                "duration": "10:20 - 11:30"
             },
             "period 3": {
                 "name": "Maths",
-                "duration": "11:30 - 12:40",
-                "note": "",
-                "home": 0
+                "duration": "11:30 - 12:40"
             },
             "period 4": {
                 "name": "Free",
-                "duration": "13:40 - 14:50",
-                "note": "",
-                "home": 0
+                "duration": "13:40 - 14:50"
             },
             "period 5": {
                 "name": "Physics",
-                "duration": "14:50 - 16:00",
-                "note": "",
-                "home": 0
+                "duration": "14:50 - 16:00"
             }
         }
     }
