@@ -11,7 +11,7 @@ let dayOfTheWeek = getDayOfWeek();
 let currentUserTimetable = {};
 // let dayOfTheWeek = 'tuesday';
 
-fetch('/data/periods.json')
+fetch('data/periods.json')
     .then(response => response.json())
     .then(timetable => {
         console.log(timetable)
@@ -417,6 +417,7 @@ function onboardingshow() {
 
 function onboardinghide() {
     currentUserTimetable = timetables[localStorage.getItem('profile')];
+    document.getElementById('loggedinas').innerHTML = 'Logged in as ' + localStorage.getItem('profile');
     loadDayTimetable();
     const draggableDiv = document.querySelector('.sheet.onboarding');
     draggableDiv.classList.remove("show");
@@ -446,7 +447,7 @@ function displayMenu(week, day) {
     menuDiv.innerHTML = '';
 
     // Fetch the menu data from the specified URL
-    fetch('/data/lunch.json')
+    fetch('data/lunch.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -515,7 +516,7 @@ let frees = {
 };
 
 // Fetch the periods.json file (ensure it's correctly served from the server)
-fetch('/data/periods.json')
+fetch('data/periods.json')
     .then(response => response.json())
     .then(data => {
         // Iterate through each person

@@ -245,6 +245,7 @@ hl {
     width: calc(100vw);
     min-height: 80px;
     margin-left: -15px;
+    filter: blur(10px);
 }
 
 .carousel .person {
