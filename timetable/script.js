@@ -1,24 +1,33 @@
-if (!window.navigator.standalone) {
+let version = '1.1';
+
+if (!window.navigator.standalone && window.location.origin != 'http://localhost:5500' && window.location.origin != 'http://192.168.1.58:5500') {
     webappshow();
 } else {
     if (!localStorage.getItem('profile')) {
         onboardingshow();
+    } else {
+        if (localStorage.getItem('version') != version) {
+            updateshow();
+            localStorage.setItem('version', version);
+        }
     }
 }
 
 let timetables = {};
 let dayOfTheWeek = getDayOfWeek();
 let currentUserTimetable = {};
-// let dayOfTheWeek = 'tuesday';
+// let dayOfTheWeek = 'monday';
 
 fetch('data/periods.json')
     .then(response => response.json())
     .then(timetable => {
-        console.log(timetable)
         timetables = timetable;
         currentUserTimetable = timetables[localStorage.getItem('profile')];
         loadDayTimetable();
         document.getElementById('loggedinas').innerHTML = 'Logged in as ' + localStorage.getItem('profile');
+        showFreesForDay(dayOfTheWeek, localStorage.getItem('profile'));
+        totalfrees(dayOfTheWeek, currentUserTimetable);
+        document.querySelector('.timer').innerHTML = getCurrentPeriodMessage();
     })
 
 var periodtoggle = 0;
@@ -121,9 +130,8 @@ function behindShrink(contentBody) {
 
 let timetableData = {};
 let selectedUserName = '';
-console.log(localStorage.getItem('profile'));
 
-async function sheetshow(name) {
+async function sheetshow(name, button) {
     document.querySelector('.sheet').style.display = 'unset';
     setTimeout(() => {
         document.querySelector('.sheet').classList.add('show');
@@ -131,17 +139,16 @@ async function sheetshow(name) {
     document.querySelectorAll('.contentbody').forEach(contentBody => {
         behindShrink(contentBody);
     });
-    document.getElementById(name).classList.add('highlighted');
+    button.classList.add('highlighted');
 
     // STARTING DATE ON SLIDER IS HERE!!!!
-    document.querySelectorAll(`.segmentedcontrols .item${dayOfTheWeek}`).forEach(day => {
+    document.querySelectorAll(`.segmentedcontrols .item#${dayOfTheWeek}`).forEach(day => {
         document.querySelectorAll('.segmentedcontrols .item').forEach(other => {
             if (other.id != day.id) {
                 other.classList.remove('selected');
             }
         });
         day.classList.add('selected');
-        console.log(document.querySelector('.segmentedcontrols .selector').clientWidth * (Array.prototype.indexOf.call(document.querySelector('.segmentedcontrols').children, day)));
         document.querySelector('.segmentedcontrols .selector').style.marginLeft = (document.querySelector('.segmentedcontrols .selector').clientWidth * (Array.prototype.indexOf.call(document.querySelector('.segmentedcontrols').children, day))) + 'px';
     });
 
@@ -298,41 +305,76 @@ document.querySelectorAll('.segmentedcontrols .item').forEach(day => {
 
 function updatePeriodsWithBlur(dayId, currentUserTimetable, selectedname) {
     const periodsContainer = document.querySelector('.sheet .periods');
-    const dayData = timetableData[dayId];
-    const userDayData = currentUserTimetable[dayId];
+    if (selectedname == 'Frees') {
+        const dayData = frees[dayId];
+        const userDayData = currentUserTimetable[dayId];
 
-    const periods = Array.from(periodsContainer.querySelectorAll('.period'));
-    console.log(dayId);
+        const periods = Array.from(periodsContainer.querySelectorAll('.period'));
 
-    if (dayData) {
-        periodsContainer.classList.add('blurred');
+        if (dayData) {
+            periodsContainer.classList.add('blurred');
 
-        setTimeout(() => {
-            periods.forEach((periodDiv, index) => {
-                const periodKey = `period ${index + 1}`;
-                const periodData = dayData[periodKey];
+            setTimeout(() => {
+                periods.forEach((periodDiv, index) => {
+                    const periodKey = `period ${index + 1}`;
+                    const periodData = userDayData[periodKey];
 
-                if (periodData) {
-                    const bodyDiv = periodDiv.querySelector('.body');
-                    const extraDiv = periodDiv.querySelector('.extra');
-                    const mainText = periodData.name;
+                    if (periodData) {
+                        const bodyDiv = periodDiv.querySelector('.body');
+                        const extraDiv = periodDiv.querySelector('.extra');
+                        const mainText = periodKey.slice(7);
 
-                    if (bodyDiv) {
-                        bodyDiv.firstChild.nodeValue = mainText + " ";
-                        periodDiv.classList.toggle('highlight', mainText === "Free" && userDayData[periodKey]?.name === "Free");
-                    }
+                        if (bodyDiv) {
+                            bodyDiv.firstChild.nodeValue = mainText + " ";
+                            periodDiv.classList.toggle('highlight', userDayData[periodKey]?.name === "Free");
+                        }
 
-                    if (extraDiv) {
-                        extraDiv.innerHTML = `${periodData.duration}`;
-                        if (mainText === "Free") {
-                            extraDiv.innerHTML += `<div class="people">${((frees[dayId][periodKey]).filter(name => name !== selectedname)).join(', ')}</div>`;
+                        if (extraDiv) {
+                            extraDiv.innerHTML = `${periodData.duration}`;
+                            extraDiv.innerHTML += `<div class="people">${((frees[dayId][periodKey]).filter(name => name !== localStorage.getItem('profile'))).join(', ')}</div>`;
                         }
                     }
-                }
-            });
+                });
 
-            periodsContainer.classList.remove('blurred');
-        }, 75);
+                periodsContainer.classList.remove('blurred');
+            }, 75);
+        }
+    } else {
+        const dayData = timetableData[dayId];
+        const userDayData = currentUserTimetable[dayId];
+
+        const periods = Array.from(periodsContainer.querySelectorAll('.period'));
+
+        if (dayData) {
+            periodsContainer.classList.add('blurred');
+
+            setTimeout(() => {
+                periods.forEach((periodDiv, index) => {
+                    const periodKey = `period ${index + 1}`;
+                    const periodData = dayData[periodKey];
+
+                    if (periodData) {
+                        const bodyDiv = periodDiv.querySelector('.body');
+                        const extraDiv = periodDiv.querySelector('.extra');
+                        const mainText = periodData.name;
+
+                        if (bodyDiv) {
+                            bodyDiv.firstChild.nodeValue = mainText + " ";
+                            periodDiv.classList.toggle('highlight', mainText === "Free" && userDayData[periodKey]?.name === "Free");
+                        }
+
+                        if (extraDiv) {
+                            extraDiv.innerHTML = `${periodData.duration}`;
+                            if (mainText === "Free") {
+                                extraDiv.innerHTML += `<div class="people">${((frees[dayId][periodKey]).filter(name => name !== selectedname)).join(', ')}</div>`;
+                            }
+                        }
+                    }
+                });
+
+                periodsContainer.classList.remove('blurred');
+            }, 75);
+        }
     }
 }
 
@@ -402,9 +444,7 @@ function onboardingshow() {
     document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(person => {
         person.addEventListener('click', () => {
             person.classList.add('select');
-            console.log(person.id)
             localStorage.setItem('profile', person.id);
-            console.log(localStorage.getItem('profile'));
             document.querySelector('.sheet.onboarding').querySelector('.continue.people').classList.remove('disabled');
             document.querySelector('.sheet.onboarding').querySelectorAll('.person').forEach(other => {
                 if (other != person) {
@@ -419,6 +459,8 @@ function onboardinghide() {
     currentUserTimetable = timetables[localStorage.getItem('profile')];
     document.getElementById('loggedinas').innerHTML = 'Logged in as ' + localStorage.getItem('profile');
     loadDayTimetable();
+    showFreesForDay(dayOfTheWeek, localStorage.getItem('profile'));
+    document.querySelector('.timer').innerHTML = getCurrentPeriodMessage();
     const draggableDiv = document.querySelector('.sheet.onboarding');
     draggableDiv.classList.remove("show");
     draggableDiv.style.bottom = `-100vh`; // Reset position
@@ -436,11 +478,15 @@ function onboardinghide() {
         document.querySelectorAll('.person').forEach(person => {
             person.classList.remove('highlighted');
         });
+        if (localStorage.getItem('version') != version) {
+            updateshow();
+            localStorage.setItem('version', version);
+        }
     }, 500);
 }
 
 function displayMenu(week, day) {
-    document.querySelector('.contentbody#lunch .subheading extra').innerHTML = day.charAt(0).toUpperCase() + day.slice(1);;
+    document.querySelector('.contentbody#lunch .subheading extra').innerHTML = day.charAt(0).toUpperCase() + day.slice(1);
     const menuDiv = document.querySelector('.menu');
 
     // Clear previous menu items
@@ -505,7 +551,7 @@ function getDayOfWeek() {
 }
 
 // Example usage: Display the menu for week 1, Monday
-displayMenu(1, dayOfTheWeek);
+displayMenu(2, dayOfTheWeek);
 
 let frees = {
     monday: {},
@@ -544,9 +590,7 @@ fetch('data/periods.json')
                 }
             }
         }
-
-        // Log the final frees object
-        console.log(frees);
+        showFreesForDay(dayOfTheWeek, localStorage.getItem('profile'));
     })
     .catch(error => {
         console.error('Error loading periods.json:', error);
@@ -555,4 +599,126 @@ fetch('data/periods.json')
 function logout() {
     localStorage.removeItem('profile');
     location.reload();
+}
+
+function showFreesForDay(day, userProfile) {
+    const userFrees = currentUserTimetable[day]; // User's timetable for the day
+    const carousel = document.querySelector('.carousel'); // Carousel div
+
+    const peopleSet = new Set(); // To avoid duplicates
+
+    // Iterate over each period for the day
+    for (const [period, details] of Object.entries(userFrees)) {
+        if (details.name == "Free" && frees[day][period]) {
+            // Add all people who are free in this period (except the current user)
+            frees[day][period].forEach(person => {
+                if (person !== userProfile) peopleSet.add(person);
+            });
+        }
+    }
+
+    if (Object.values(currentUserTimetable[dayOfTheWeek]).filter(period => period.name === "Free").length == 0) {
+        carousel.innerHTML = 'Nobody... Oh so lonelyyyy...';
+        carousel.style.marginLeft = '0px';
+        carousel.style.opacity = '0.3';
+        carousel.style.minHeight = '20px';
+    } else {
+        carousel.innerHTML = "";
+    }
+
+    // Generate the HTML for each person and append to the carousel
+    peopleSet.forEach(person => {
+        const personDiv = document.createElement("div");
+        personDiv.classList.add("person");
+
+        const iconDiv = document.createElement("div");
+        iconDiv.classList.add("icon");
+
+        const nameDiv = document.createElement("div");
+        nameDiv.classList.add("name");
+        nameDiv.textContent = person;
+
+        personDiv.appendChild(iconDiv);
+        personDiv.appendChild(nameDiv);
+        carousel.appendChild(personDiv);
+    });
+}
+
+function totalfrees(day, timetable) {
+    const freeCount = Object.values(timetable[day]).filter(period => period.name === "Free").length;
+    document.querySelector('.contentbody#home > .day').innerHTML = `You have ${freeCount === 0 ? "no" : freeCount} free${freeCount === 1 ? "" : "s"} on ${day}.`
+}
+
+const periods = [
+    { period: 1, start: "09:00", end: "10:10" },
+    { period: 2, start: "10:20", end: "11:30" },
+    { period: 3, start: "11:30", end: "12:40" },
+    { period: 4, start: "13:40", end: "14:50" },
+    { period: 5, start: "14:50", end: "16:00" },
+];
+
+function getMinutesDifference(time1, time2) {
+    const [h1, m1] = time1.split(":").map(Number);
+    const [h2, m2] = time2.split(":").map(Number);
+    return (h2 * 60 + m2) - (h1 * 60 + m1);
+}
+
+function formatTime(minutes) {
+    if (minutes >= 60) {
+        const hours = Math.floor(minutes / 60);
+        const mins = minutes % 60;
+        return `${hours} hour${hours > 1 ? "s" : ""}${mins > 0 ? ` and ${mins} minute${mins > 1 ? "s" : ""}` : ""}`;
+    } else {
+        return `${minutes} minute${minutes > 1 ? "s" : ""}`;
+    }
+}
+
+function getCurrentPeriodMessage() {
+    const now = new Date();
+    const currentTime = now.toTimeString().slice(0, 5);
+
+    for (const period of periods) {
+        const minutesToStart = getMinutesDifference(currentTime, period.start);
+        const minutesToEnd = getMinutesDifference(currentTime, period.end);
+
+        if (minutesToStart > 0) {
+            return `You have <hl>${currentUserTimetable[dayOfTheWeek]['period ' + period.period].name}</hl> in <hl>${formatTime(minutesToStart)}</hl>`;
+        } else if (minutesToEnd > 0) {
+            return `You are in <hl>Period ${period.period}</hl>`;
+        }
+    }
+
+    return "No periods right now.";
+}
+
+console.log(getCurrentPeriodMessage());
+
+function updateshow() {
+    setTimeout(() => {
+        document.querySelector('.sheet.update').style.display = 'flex'
+        setTimeout(() => {
+            document.querySelector('.sheet.update').classList.add('show');
+        }, 10);
+        document.querySelectorAll('.contentbody').forEach(contentBody => {
+            behindShrink(contentBody);
+        });
+    }, 300);
+}
+
+function updatehide() {
+    const draggableDiv = document.querySelector('.sheet.update');
+    draggableDiv.classList.remove("show");
+    draggableDiv.style.bottom = `-100vh`; // Reset position
+    document.querySelectorAll('.contentbody').forEach(contentBody => {
+        contentBody.classList.remove('shrink');
+        contentBody.style.backgroundColor = 'unset';
+        contentBody.style.scale = '1';
+        contentBody.style.borderRadius = '0px';
+        contentBody.style.top = '0px';
+        contentBody.style.transition = 'scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s';
+        document.querySelector('html').style.overflowY = 'unset';
+    });
+    setTimeout(() => {
+        draggableDiv.style.display = 'none';
+    }, 500);
 }

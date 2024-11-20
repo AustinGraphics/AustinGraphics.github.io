@@ -16,6 +16,12 @@ body {
     background-color: #000000;
 }
 
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .tabs {
     position: fixed;
     bottom: 0;
@@ -166,12 +172,14 @@ body {
     flex-direction: column;
     gap: 20px;
     overflow-x: visible;
+    overflow-x: hidden;
     top: 0px;
     position: absolute;
     width: calc(100vw - 30px);
     scale: 1;
     transition: scale cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, top cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, border-radius cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s;
     min-height: calc(100vh - 140px);
+    overflow-y: scroll;
 }
 
 .contentbody.shrink {
@@ -238,6 +246,10 @@ hl {
     color: #c1b6f9;
 }
 
+/* .timer {
+    filter: blur(10px);
+} */
+
 .carousel {
     display: flex;
     gap: 20px;
@@ -245,7 +257,6 @@ hl {
     width: calc(100vw);
     min-height: 80px;
     margin-left: -15px;
-    filter: blur(10px);
 }
 
 .carousel .person {
@@ -386,7 +397,7 @@ hl {
 }
 
 .extra .people {
-    word-spacing: 2px;
+    word-spacing: 0px;
 }
 
 .periods.collapsed .period {
@@ -605,6 +616,10 @@ hl {
     text-align: center;
     border-radius: 10px;
     transition: background-color linear 0.1s;
+}
+
+.timetables .person.frees {
+    flex: 0 1 calc(100% - 25px);
 }
 
 .timetables .person.highlighted {
@@ -885,4 +900,80 @@ hl {
     padding: 10px;
     border: solid 1px rgba(255, 0, 0, 0.212);
     border-radius: 7px;
+}
+
+
+.sheet.update {
+    transition: bottom cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s !important;
+    display: flex;
+    flex-direction: row;
+}
+
+.sheet.update .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    min-width: calc(100vw - 30px);
+    transition: margin-left cubic-bezier(0.25, 0.1, 0.25, 1) 0.4s;
+}
+
+.sheet.update .logo {
+    width: 80px;
+    height: 80px;
+    background-image: url(loopimage.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 150px;
+}
+
+.sheet.update .logo.sparkle {
+    width: 60px;
+    height: 60px;
+    background-image: url(sparkles.svg);
+    margin-top: 100px;
+}
+
+.sheet.update .title {
+    font-size: 37px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sheet.update .subtitle {
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.sheet.update .new {
+    margin-top: 30px;
+    width: calc(100% - 25px);
+    display: flex;
+}
+
+.sheet.update .continue {
+    width: calc(100% - 50px);
+    height: 45px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background-color: #6a3dfdf5;
+    transition: background-color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s, color cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s;
+}
+
+.sheet.update .continue.bottom {
+    margin-top: auto;
+}
+
+.sheet.update ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
