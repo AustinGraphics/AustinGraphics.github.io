@@ -730,10 +730,10 @@ ws.onopen = () => {
     console.log('Connected to WebSocket');
 
     // Check if the profile is 'Austin' (admin)
-    const profile = localStorage.getItem('profile') || 'Guest';
-    if (profile === 'Austin') {
+    const profile = localStorage.getItem('profile');
+    if (localStorage.getItem('profile') == 'Austin') {
         // Fetch the message log from the server
-        fetch('https://websocket-server.koyeb.app/messages', {  // Adjust URL based on your server
+        fetch('https://ltd-olenka-austintimetable-5c85e968.koyeb.app/', {  // Adjust URL based on your server
             method: 'GET',
             headers: { 'profile': 'Austin' },  // Send profile in headers for admin check
         })
@@ -746,6 +746,7 @@ ws.onopen = () => {
         // Regular user sends the opening message
         const message = `${profile} opened website at ${new Date().toISOString()}`;
         ws.send(message);
+        console.log(message);
     }
 };
 

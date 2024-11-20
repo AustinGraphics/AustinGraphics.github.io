@@ -52,7 +52,7 @@ wss.on('connection', (ws) => {
 // Endpoint for the admin to fetch messages
 wss.on('request', (req, res) => {
     // Check if the user is the admin (optional: replace this with a more secure check)
-    const isAdmin = req.headers['profile'] === 'Austin';  // This is a simple example, you can improve this
+    const isAdmin = req.headers['profile'] == 'Austin';  // This is a simple example, you can improve this
 
     if (isAdmin) {
         res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -63,6 +63,6 @@ wss.on('request', (req, res) => {
     }
 });
 
-server.listen(process.env.PORT || 8080, () => {
+server.listen(process.env.PORT || 8000, () => {
     console.log(`WebSocket server running on port ${process.env.PORT || 8000}`);
 });
