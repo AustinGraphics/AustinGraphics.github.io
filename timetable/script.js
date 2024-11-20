@@ -724,32 +724,31 @@ function updatehide() {
     }, 500);
 }
 
-const ws = new WebSocket('wss://cl4.tnix.dev/');
+const ws = new WebSocket('wss://ltd-olenka-austintimetable-5c85e968.koyeb.app/');
 
-// Connection opened
 ws.onopen = () => {
-  console.log('Connected to WebSocket server');
+    console.log('Connected to WebSocket');
 
-  // Join the "austintimetable" room
-  const joinRoomMessage = JSON.stringify({
-    action: 'join', // Action to join a room
-    room: 'austintimetable', // Room name
-  });
-
-  ws.send(joinRoomMessage);
+    // Check if the profile is 'Austin' (admin)
+    const profile = localStorage.getItem('profile') || 'Guest';
+    if (profile === 'Austin') {
+        // Fetch the message log from the server
+        fetch('https://websocket-server.koyeb.app/messages', {  // Adjust URL based on your server
+            method: 'GET',
+            headers: { 'profile': 'Austin' },  // Send profile in headers for admin check
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Log of users who opened the website:', data);
+        })
+        .catch(error => console.error('Error fetching message log:', error));
+    } else {
+        // Regular user sends the opening message
+        const message = `${profile} opened website at ${new Date().toISOString()}`;
+        ws.send(message);
+    }
 };
 
-// Handle messages from the server
 ws.onmessage = event => {
-  console.log('Message from server:', event.data);
-};
-
-// Handle connection close
-ws.onclose = () => {
-  console.log('Disconnected from WebSocket server');
-};
-
-// Handle errors
-ws.onerror = error => {
-  console.error('WebSocket error:', error);
+    console.log('Message from server:', event.data);
 };
