@@ -727,29 +727,22 @@ function updatehide() {
 const ws = new WebSocket('wss://ltd-olenka-austintimetable-5c85e968.koyeb.app/');
 
 ws.onopen = () => {
-    console.log('Connected to WebSocket');
+    console.log('Connected to WebSocket server');
+};
 
-    // Check if the profile is 'Austin' (admin)
-    const profile = localStorage.getItem('profile');
-    if (localStorage.getItem('profile') == 'Austin') {
-        // Fetch the message log from the server
-        fetch('https://ltd-olenka-austintimetable-5c85e968.koyeb.app/', {  // Adjust URL based on your server
-            method: 'GET',
-            headers: { 'profile': 'Austin' },  // Send profile in headers for admin check
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Log of users who opened the website:', data);
-        })
-        .catch(error => console.error('Error fetching message log:', error));
-    } else {
-        // Regular user sends the opening message
-        const message = `${profile} opened website at ${new Date().toISOString()}`;
-        ws.send(message);
-        console.log(message);
+ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);  // Parse the JSON data from the server
+
+    // If the server sends logs, log them to the console
+    if (data.logs) {
+        console.log('Logs received from server:', data.logs);
     }
 };
 
-ws.onmessage = event => {
-    console.log('Message from server:', event.data);
+ws.onerror = (error) => {
+    console.error('WebSocket Error:', error);
+};
+
+ws.onclose = () => {
+    console.log('Disconnected from WebSocket server');
 };

@@ -47,20 +47,9 @@ wss.on('connection', (ws) => {
     ws.on('close', () => {
         console.log('Client disconnected');
     });
-});
 
-// Endpoint for the admin to fetch messages
-wss.on('request', (req, res) => {
-    // Check if the user is the admin (optional: replace this with a more secure check)
-    const isAdmin = req.headers['profile'] == 'Austin';  // This is a simple example, you can improve this
-
-    if (isAdmin) {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(messageLog));  // Send all logged messages to the admin
-    } else {
-        res.writeHead(403, { 'Content-Type': 'text/plain' });
-        res.end('Unauthorized');
-    }
+    // Send the current message log to the client upon connection
+    ws.send(JSON.stringify({ logs: messageLog }));
 });
 
 server.listen(process.env.PORT || 8000, () => {
