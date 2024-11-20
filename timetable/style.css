@@ -929,8 +929,8 @@ hl {
 }
 
 .sheet.update .logo.sparkle {
-    width: 60px;
-    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
     background-image: url(sparkles.svg);
     margin-top: 100px;
 }
