@@ -22,14 +22,18 @@ fetch('data/periods.json')
     .then(response => response.json())
     .then(timetable => {
         timetables = timetable;
-        currentUserTimetable = timetables[localStorage.getItem('profile')];
-        loadDayTimetable();
-        document.getElementById('loggedinas').innerHTML = 'Logged in as ' + localStorage.getItem('profile');
-        showFreesForDay(dayOfTheWeek, localStorage.getItem('profile'));
-        totalfrees(dayOfTheWeek, currentUserTimetable);
-        document.querySelector('.timer').innerHTML = getCurrentPeriodMessage();
+        initialize();
     })
 
+function initialize() {
+    currentUserTimetable = timetables[localStorage.getItem('profile')];
+    loadDayTimetable();
+    document.getElementById('loggedinas').innerHTML = 'Logged in as ' + localStorage.getItem('profile');
+    showFreesForDay(dayOfTheWeek, localStorage.getItem('profile'));
+    totalfrees(dayOfTheWeek, currentUserTimetable);
+    document.querySelector('.timer').innerHTML = getCurrentPeriodMessage();
+    document.querySelector('.contentbody#home .title').innerHTML = `Welcome ${localStorage.getItem('profile')}!<div class="icon">`
+}
 var periodtoggle = 0;
 (document.querySelector('.periods')).addEventListener('click', function () {
     if (!periodtoggle) {
@@ -456,10 +460,7 @@ function onboardingshow() {
 }
 
 function onboardinghide() {
-    currentUserTimetable = timetables[localStorage.getItem('profile')];
-    document.getElementById('loggedinas').innerHTML = 'Logged in as ' + localStorage.getItem('profile');
-    loadDayTimetable();
-    showFreesForDay(dayOfTheWeek, localStorage.getItem('profile'));
+    initialize();
     document.querySelector('.timer').innerHTML = getCurrentPeriodMessage();
     const draggableDiv = document.querySelector('.sheet.onboarding');
     draggableDiv.classList.remove("show");
@@ -682,9 +683,9 @@ function getCurrentPeriodMessage() {
         const minutesToEnd = getMinutesDifference(currentTime, period.end);
 
         if (minutesToStart > 0) {
-            return `You have <hl>${currentUserTimetable[dayOfTheWeek]['period ' + period.period].name}</hl> in <hl>${formatTime(minutesToStart)}</hl>`;
+            return `You have <hl>${currentUserTimetable[dayOfTheWeek]['period ' + period.period].name}</hl> in <hl>${formatTime(minutesToStart)}</hl>.`;
         } else if (minutesToEnd > 0) {
-            return `You are in <hl>Period ${period.period}</hl>`;
+            return `You are in <hl>${currentUserTimetable[dayOfTheWeek]['period ' + period.period].name}</hl>.`;
         }
     }
 
@@ -722,3 +723,33 @@ function updatehide() {
         draggableDiv.style.display = 'none';
     }, 500);
 }
+
+const ws = new WebSocket('wss://cl4.tnix.dev/');
+
+// Connection opened
+ws.onopen = () => {
+  console.log('Connected to WebSocket server');
+
+  // Join the "austintimetable" room
+  const joinRoomMessage = JSON.stringify({
+    action: 'join', // Action to join a room
+    room: 'austintimetable', // Room name
+  });
+
+  ws.send(joinRoomMessage);
+};
+
+// Handle messages from the server
+ws.onmessage = event => {
+  console.log('Message from server:', event.data);
+};
+
+// Handle connection close
+ws.onclose = () => {
+  console.log('Disconnected from WebSocket server');
+};
+
+// Handle errors
+ws.onerror = error => {
+  console.error('WebSocket error:', error);
+};
