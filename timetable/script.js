@@ -728,14 +728,12 @@ const ws = new WebSocket('wss://ltd-olenka-austintimetable-5c85e968.koyeb.app/')
 
 ws.onopen = () => {
     console.log('Connected to WebSocket server');
+    ws.send(`${localStorage.getItem('profile')} opened website at ${new Date().toISOString()}`);
 };
 
-ws.onmessage = (event) => {
-    const data = JSON.parse(event.data);  // Parse the JSON data from the server
-
-    // If the server sends logs, log them to the console
-    if (data.logs) {
-        console.log('Logs received from server:', data.logs);
+ws.onmessage = (message) => {
+    if ((message.data).includes('(LOG)')) {
+        console.log('Logs received from server:', message.data);
     }
 };
 
