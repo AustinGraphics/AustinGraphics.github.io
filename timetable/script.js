@@ -33,6 +33,9 @@ function initialize() {
     totalfrees(dayOfTheWeek, currentUserTimetable);
     document.querySelector('.timer').innerHTML = getCurrentPeriodMessage();
     document.querySelector('.contentbody#home .title').innerHTML = `Welcome ${localStorage.getItem('profile')}!<div class="icon">`
+    if (localStorage.getItem('profile') != 'Austin') {
+        document.querySelector('#logsbutton').remove();
+    }
 }
 var periodtoggle = 0;
 (document.querySelector('.periods')).addEventListener('click', function () {
@@ -461,6 +464,7 @@ function onboardingshow() {
 
 function onboardinghide() {
     initialize();
+    ws.send(`${localStorage.getItem('profile')} opened today at ${new Date().toISOString().slice(11, 16)}`);
     document.querySelector('.timer').innerHTML = getCurrentPeriodMessage();
     const draggableDiv = document.querySelector('.sheet.onboarding');
     draggableDiv.classList.remove("show");
@@ -683,7 +687,7 @@ function getCurrentPeriodMessage() {
         const minutesToEnd = getMinutesDifference(currentTime, period.end);
 
         if (minutesToStart > 0) {
-            return `You have <hl>${currentUserTimetable[dayOfTheWeek]['period ' + period.period].name}</hl> in <hl>${formatTime(minutesToStart)}</hl>.`;
+            try { return `You have <hl>${currentUserTimetable[dayOfTheWeek]['period ' + period.period].name}</hl> in <hl>${formatTime(minutesToStart)}</hl>.`; } catch { }
         } else if (minutesToEnd > 0) {
             return `You are in <hl>${currentUserTimetable[dayOfTheWeek]['period ' + period.period].name}</hl>.`;
         }
@@ -728,12 +732,20 @@ const ws = new WebSocket('wss://ltd-olenka-austintimetable-5c85e968.koyeb.app/')
 
 ws.onopen = () => {
     console.log('Connected to WebSocket server');
-    ws.send(`${localStorage.getItem('profile')} opened website at ${new Date().toISOString()}`);
+    if (localStorage.getItem('profile') != null) {
+        ws.send(`${localStorage.getItem('profile')} opened website today at ${new Date().toISOString().slice(11, 16)}`);
+    }
 };
 
 ws.onmessage = (message) => {
     if ((message.data).includes('(LOG)')) {
-        console.log('Logs received from server:', message.data);
+        console.log('Logs received from server:', JSON.parse((message.data).replace("(LOG)", "")).logs);
+        const container = document.querySelector('.contentbody#logs .logs')
+        JSON.parse((message.data).replace("(LOG)", "")).logs.forEach(item => {
+            const div = document.createElement('div');
+            div.textContent = item;
+            container.appendChild(div);
+        })
     }
 };
 

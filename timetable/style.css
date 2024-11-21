@@ -977,3 +977,10 @@ hl {
     flex-direction: column;
     gap: 10px;
 }
+
+.contentbody#logs .logs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: monospace;
+}
