@@ -738,11 +738,12 @@ ws.onopen = () => {
 };
 
 ws.onmessage = (message) => {
+    console.log('hiya');
     if ((message.data).includes('(LOG)')) {
         console.log('Logs received from server:', JSON.parse((message.data).replace("(LOG)", "")).logs);
-        const container = document.querySelector('.contentbody#logs .logs')
+        var container = document.querySelector('.contentbody#logs .logs')
         JSON.parse((message.data).replace("(LOG)", "")).logs.forEach(item => {
-            const div = document.createElement('div');
+            var div = document.createElement('div');
             div.textContent = item;
             container.appendChild(div);
         })

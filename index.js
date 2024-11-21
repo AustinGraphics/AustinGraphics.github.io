@@ -35,23 +35,25 @@ wss.on('connection', (ws) => {
   // When a message is received from a client
   ws.on('message', (message) => {
     message = message.toString();
-      console.log('Received:', message);
+    console.log('Received:', message);
 
     // Save the message to the messageLog array
     messageLog.push(message);
 
     // Send a confirmation back to the client
     ws.send('Message received and logged');
-    ws.send('(LOG)' + JSON.stringify({ logs: messageLog }));
+
+    ws.clients.forEach(client => {
+      if (client.readyState === WebSocket.OPEN) {
+        ws.send('(LOG)' + JSON.stringify({ logs: messageLog }));
+      }
+    });
   });
 
   // When the connection is closed
   ws.on('close', () => {
     console.log('Client disconnected');
   });
-
-  // Send the current message log to the client upon connection
-  ws.send('(LOG)' + JSON.stringify({ logs: messageLog }));
 });
 
 server.listen(process.env.PORT || 8000, () => {
