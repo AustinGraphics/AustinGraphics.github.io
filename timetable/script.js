@@ -742,7 +742,11 @@ ws.onmessage = (message) => {
     if ((message.data).includes('(LOG)')) {
         console.log('Logs received from server:', JSON.parse((message.data).replace("(LOG)", "")).logs);
         var container = document.querySelector('.contentbody#logs .logs')
-        container.innerHTML = "";
+        try {
+            container.innerHTML = "";
+        } catch (error) {
+            container.remove();
+        }
         JSON.parse((message.data).replace("(LOG)", "")).logs.forEach(item => {
             var div = document.createElement('div');
             div.textContent = item;
