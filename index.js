@@ -51,6 +51,7 @@ wss.on('connection', (ws) => {
   });
 
   // Send the current message log to the client upon connection
+  ws.send('(LOG)' + JSON.stringify({ logs: messageLog }));
 });
 
 server.listen(process.env.PORT || 8000, () => {
