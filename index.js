@@ -40,14 +40,16 @@ wss.on('connection', (ws) => {
     // Save the message to the messageLog array
     messageLog.push(message);
 
-    // Send a confirmation back to the client
-    ws.send('Message received and logged');
-
+    // Broadcast the updated log to all connected clients
+    const logMessage = '(LOG)' + JSON.stringify({ logs: messageLog });
     wss.clients.forEach(client => {
-      if (client.readyState === WebSocket.OPEN) {
-        ws.send('(LOG)' + JSON.stringify({ logs: messageLog }));
+      if (client.readyState === ws.OPEN) {
+        client.send(logMessage);
       }
     });
+
+    // Send a confirmation back to the sender
+    ws.send('Message received and logged');
   });
 
   // When the connection is closed
