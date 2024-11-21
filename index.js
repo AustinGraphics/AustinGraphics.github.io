@@ -42,6 +42,7 @@ wss.on('connection', (ws) => {
 
     // Send a confirmation back to the client
     ws.send('Message received and logged');
+    ws.send('(LOG)' + JSON.stringify({ logs: messageLog }));
   });
 
   // When the connection is closed
@@ -50,7 +51,6 @@ wss.on('connection', (ws) => {
   });
 
   // Send the current message log to the client upon connection
-  ws.send('(LOG)' + JSON.stringify({ logs: messageLog }));
 });
 
 server.listen(process.env.PORT || 8000, () => {

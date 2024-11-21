@@ -733,7 +733,7 @@ const ws = new WebSocket('wss://ltd-olenka-austintimetable-5c85e968.koyeb.app/')
 ws.onopen = () => {
     console.log('Connected to WebSocket server');
     if (localStorage.getItem('profile') != null) {
-        ws.send(`${localStorage.getItem('profile')} opened website today at ${new Date().toISOString().slice(11, 16)}`);
+        ws.send(`${localStorage.getItem('profile')} opened today at ${new Date().toISOString().slice(11, 16)}`);
     }
 };
 
