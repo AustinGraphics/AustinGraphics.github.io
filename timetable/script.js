@@ -746,6 +746,7 @@ ws.onmessage = (message) => {
             container.innerHTML = "";
         } catch (error) {
             container.remove();
+            console.log(error);
         }
         JSON.parse((message.data).replace("(LOG)", "")).logs.forEach(item => {
             var div = document.createElement('div');
