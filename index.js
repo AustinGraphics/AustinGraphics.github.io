@@ -43,7 +43,7 @@ wss.on('connection', (ws) => {
     // Send a confirmation back to the client
     ws.send('Message received and logged');
 
-    ws.clients.forEach(client => {
+    wss.clients.forEach(client => {
       if (client.readyState === WebSocket.OPEN) {
         ws.send('(LOG)' + JSON.stringify({ logs: messageLog }));
       }
