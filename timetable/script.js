@@ -1,6 +1,6 @@
-let version = '1.1';
+let version = '1.2';
 
-if (!window.navigator.standalone && window.location.origin != 'http://localhost:5500' && window.location.origin != 'http://192.168.1.58:5500') {
+if (!window.navigator.standalone && window.location.origin != 'http://localhost:5500' && window.location.origin != 'http://192.168.1.58:5500' & false) {
     webappshow();
 } else {
     if (!localStorage.getItem('profile')) {
@@ -333,12 +333,13 @@ function updatePeriodsWithBlur(dayId, currentUserTimetable, selectedname) {
 
                         if (bodyDiv) {
                             bodyDiv.firstChild.nodeValue = mainText + " ";
-                            periodDiv.classList.toggle('highlight', userDayData[periodKey]?.name === "Free");
+                            periodDiv.classList.toggle('highlight', userDayData[periodKey]?.name === "Free" || userDayData[periodKey]?.name === "1 to 1");
                         }
 
                         if (extraDiv) {
                             extraDiv.innerHTML = `${periodData.duration}`;
                             extraDiv.innerHTML += `<div class="people">${((frees[dayId][periodKey]).filter(name => name !== localStorage.getItem('profile'))).join(', ')}</div>`;
+                            periodDiv.classList.toggle('highlight', userDayData[periodKey]?.name === "Free" || userDayData[periodKey]?.name === "1 to 1");
                         }
                     }
                 });
@@ -367,12 +368,12 @@ function updatePeriodsWithBlur(dayId, currentUserTimetable, selectedname) {
 
                         if (bodyDiv) {
                             bodyDiv.firstChild.nodeValue = mainText + " ";
-                            periodDiv.classList.toggle('highlight', mainText === "Free" && userDayData[periodKey]?.name === "Free");
+                            periodDiv.classList.toggle('highlight', (mainText === "Free" || mainText === "1 to 1") && (userDayData[periodKey]?.name === "Free" || userDayData[periodKey]?.name === "1 to 1"));
                         }
 
                         if (extraDiv) {
                             extraDiv.innerHTML = `${periodData.duration}`;
-                            if (mainText === "Free") {
+                            if (mainText === "Free" || mainText === "1 to 1") {
                                 extraDiv.innerHTML += `<div class="people">${((frees[dayId][periodKey]).filter(name => name !== selectedname)).join(', ')}</div>`;
                             }
                         }
@@ -406,7 +407,7 @@ function loadDayTimetable() {
 
                 if (extraDiv) {
                     extraDiv.innerHTML = `${periodData.duration}`;
-                    if (mainText === "Free") {
+                    if (mainText === "Free" || mainText === "1 to 1") {
                         extraDiv.innerHTML += `<div class="people">${((frees[dayOfTheWeek][periodKey]).filter(name => name !== localStorage.getItem('profile'))).join(', ')}</div>`;
                     }
                 }
@@ -583,7 +584,7 @@ fetch('data/periods.json')
                     let periodData = periods[period];
 
                     // Check if the person is free for this period
-                    if (periodData.name === "Free") {
+                    if (periodData.name === "Free" || periodData.name === "1 to 1") {
                         // If this period is not yet in the frees object, initialize it as an empty array
                         if (!frees[day][period]) {
                             frees[day][period] = [];
@@ -614,7 +615,7 @@ function showFreesForDay(day, userProfile) {
 
     // Iterate over each period for the day
     for (const [period, details] of Object.entries(userFrees)) {
-        if (details.name == "Free" && frees[day][period]) {
+        if (details.name == "Free" && frees[day][period] || details.name == "1 to 1" && frees[day][period]) {
             // Add all people who are free in this period (except the current user)
             frees[day][period].forEach(person => {
                 if (person !== userProfile) peopleSet.add(person);
@@ -622,7 +623,7 @@ function showFreesForDay(day, userProfile) {
         }
     }
 
-    if (Object.values(currentUserTimetable[dayOfTheWeek]).filter(period => period.name === "Free").length == 0) {
+    if (Object.values(currentUserTimetable[dayOfTheWeek]).filter(period => period.name === "Free" || period.name === "1 to 1").length == 0) {
         carousel.innerHTML = 'Nobody... Oh so lonelyyyy...';
         carousel.style.marginLeft = '0px';
         carousel.style.opacity = '0.3';
@@ -650,7 +651,7 @@ function showFreesForDay(day, userProfile) {
 }
 
 function totalfrees(day, timetable) {
-    const freeCount = Object.values(timetable[day]).filter(period => period.name === "Free").length;
+    const freeCount = Object.values(timetable[day]).filter(period => period.name === "Free" || period.name === "1 to 1").length;
     document.querySelector('.contentbody#home > .day').innerHTML = `You have ${freeCount === 0 ? "no" : freeCount} free${freeCount === 1 ? "" : "s"} on ${day}.`
 }
 
